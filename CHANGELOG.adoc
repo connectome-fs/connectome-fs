@@ -14,3 +14,9 @@ Details: link:changelog-details/2026-07-26 - initial bootstrap.adoc[2026-07-26 -
 * SolidStart static site (`site/`) with news, about, system-aware theme toggle
 * Antora playbook publishes docs into `site/public/docs/`; GH Pages workflow
 * Documented SolidStart+Antora concurrent architecture
+
+== 2026-07-27 — Docs gate + graph backdrop
+
+* `/docs` is a SolidStart onboarding page; Antora moves to `/manual/`
+* Background connectome graph with fixed nodes and inverse mouse-driven shadows
+* Theme toggle uses sun/moon icons

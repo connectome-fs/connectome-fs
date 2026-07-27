@@ -31,7 +31,7 @@ jobs:
       - name: Install Antora
         run: npm install -g @antora/cli @antora/site-generator
 
-      - name: Build Antora docs into site/public/docs
+      - name: Build Antora docs into site/public/manual
         run: antora --fetch antora-playbook.yml
 
       - name: Install site deps

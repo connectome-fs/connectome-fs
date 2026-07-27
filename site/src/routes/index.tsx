@@ -1,11 +1,9 @@
 import { Title } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { newsItems } from "~/lib/news";
 
 export default function Home() {
-  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
-  const docsHref = `${base}/docs/`;
-
   const latest = newsItems.slice(0, 2);
 
   return (
@@ -18,9 +16,9 @@ export default function Home() {
           typed associations, and sharded search — with a Rust core and room for D tooling on top.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href={docsHref}>
+          <A class="btn btn-primary" href="/docs">
             Read the docs
-          </a>
+          </A>
           <a class="btn btn-ghost" href="https://github.com/AMDphreak/connectome-fs">
             View on GitHub
           </a>

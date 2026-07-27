@@ -13,4 +13,4 @@ Durable facts for agents working on this machine/repo.
 | Stack: Rust workspace, SQLite (`rusqlite` bundled), CLI binary `cfs` | 1 |
 | `.gitignore` is allow-list (`*` then `!` includes) | 1 |
 | Bindings strategy: Rust core + C ABI; D first wrapper; see `docs/explanation/bindings.adoc` | 1 |
-| Site: SolidStart (static) + Antora docs under `/docs/`; GH Pages via Actions | 1 |
+| Site: SolidStart (static) + `/docs` gate + Antora under `/manual/`; GH Pages via Actions | 1 |

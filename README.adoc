@@ -73,8 +73,9 @@ Kernel mount (WinFsp/FUSE), DHT/IPFS mesh, content-block dedup, embedding RAG ba
 
 == Website
 
-Marketing/news site is SolidStart under `site/` (static). Docs are Antora under
-`/docs/` (AsciiDoc in `docs/modules/`). CI: `.github/workflows/pages.yml` →
+Marketing/news site is SolidStart under `site/` (static). The `/docs` route is an
+onboarding gate; Antora publishes under `/manual/` from AsciiDoc in `docs/modules/`.
+CI: `.github/workflows/pages.yml` →
 GitHub Pages at `https://amdphreak.github.io/connectome-fs/`.
 
 [source,powershell]

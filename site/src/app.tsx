@@ -4,6 +4,7 @@ import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import { ThemeProvider } from "~/lib/theme";
 import { SiteChrome } from "~/components/SiteChrome";
+import { GraphBackdrop } from "~/components/GraphBackdrop";
 import "./app.css";
 
 /** Vite/SolidStart BASE_URL is `/connectome-fs/`; Solid Router wants no trailing slash. */
@@ -23,9 +24,12 @@ export default function App() {
         <Router
           base={base}
           root={(props) => (
-            <SiteChrome>
-              <Suspense fallback={null}>{props.children}</Suspense>
-            </SiteChrome>
+            <>
+              <GraphBackdrop />
+              <SiteChrome>
+                <Suspense fallback={null}>{props.children}</Suspense>
+              </SiteChrome>
+            </>
           )}
         >
           <FileRoutes />

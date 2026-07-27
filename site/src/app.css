@@ -40,6 +40,70 @@ body {
   line-height: 1.55;
 }
 
+.graph-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  --shadow-x: 0px;
+  --shadow-y: 0px;
+}
+
+.graph-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.graph-svg-shadows {
+  transform: translate(var(--shadow-x), var(--shadow-y));
+  filter: blur(2px);
+  opacity: 0.9;
+}
+
+.graph-edges line {
+  stroke: color-mix(in oklab, var(--accent) 28%, transparent);
+  stroke-width: 0.9;
+}
+
+.graph-shadow {
+  fill: color-mix(in oklab, var(--ink) 16%, transparent);
+}
+
+.graph-node {
+  fill: color-mix(in oklab, var(--accent) 55%, var(--bg0));
+  stroke: color-mix(in oklab, var(--accent) 70%, transparent);
+  stroke-width: 0.6;
+}
+
+html[data-theme="dark"] .graph-edges line {
+  stroke: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+html[data-theme="dark"] .graph-shadow {
+  fill: color-mix(in oklab, var(--accent) 14%, transparent);
+}
+
+html[data-theme="dark"] .graph-node {
+  fill: color-mix(in oklab, var(--accent) 35%, var(--bg1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-svg-shadows {
+    transform: none;
+  }
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
@@ -54,11 +118,6 @@ code,
 .mono {
   font-family: var(--font-mono);
   font-size: 0.92em;
-}
-
-.wrap {
-  width: min(1080px, calc(100% - 2.5rem));
-  margin-inline: auto;
 }
 
 .site-header {
@@ -100,18 +159,48 @@ code,
 
 .theme-toggle {
   appearance: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
   border: 1px solid var(--line);
   background: color-mix(in oklab, var(--bg0) 70%, transparent);
   color: var(--ink);
   border-radius: 999px;
-  padding: 0.35rem 0.75rem;
-  font: inherit;
-  font-weight: 650;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
   border-color: color-mix(in oklab, var(--accent) 50%, var(--line));
+  color: var(--accent);
+}
+
+.theme-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-icon-moon {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.55) rotate(-40deg);
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.55) rotate(40deg);
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
 }
 
 .hero {
@@ -161,10 +250,25 @@ code,
   color: #f7fff9;
 }
 
+.btn-primary:hover {
+  /* Prevent global `a:hover { color: ... }` from hurting contrast on the main CTA. */
+  background: color-mix(in oklab, var(--accent) 78%, #000 22%);
+  color: #f7fff9;
+}
+
+.btn-primary:visited {
+  color: #f7fff9;
+}
+
 .btn-ghost {
   border-color: var(--line);
   color: var(--ink);
   background: color-mix(in oklab, var(--bg0) 55%, transparent);
+}
+
+.btn-ghost:hover {
+  /* Keep hover text readable; avoid inheriting `a:hover` accent-2. */
+  color: var(--ink);
 }
 
 .section {
@@ -218,6 +322,79 @@ code,
   font-size: 0.95rem;
 }
 
+.docs-gate {
+  padding: 1rem 0 2rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.docs-gate .eyebrow {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.docs-gate h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+
+.docs-gate > .lead {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.docs-map {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.docs-map li {
+  display: grid;
+  gap: 0.2rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.docs-map strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.docs-map span {
+  color: var(--muted);
+}
+
+.code-block {
+  margin: 0 0 1rem;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  background: color-mix(in oklab, var(--bg0) 70%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.muted-note {
+  margin: 0;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero h1 {
     animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
@@ -227,6 +404,13 @@ code,
   }
   .cta-row {
     animation: rise 700ms 140ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .docs-gate h1 {
+    animation: rise 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .docs-gate > .lead,
+  .docs-gate .cta-row {
+    animation: rise 700ms 90ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 }
 

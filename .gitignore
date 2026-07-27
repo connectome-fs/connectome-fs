@@ -34,6 +34,7 @@ site/.output/
 site/.vinxi/
 site/.solid/
 site/public/docs/
+site/public/manual/
 site/dist/
 **/.DS_Store
 **/Thumbs.db

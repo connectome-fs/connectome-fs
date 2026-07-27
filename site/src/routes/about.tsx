@@ -1,10 +1,7 @@
 import { Title } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 
 export default function AboutPage() {
-  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
-  const docsHref = `${base}/docs/`;
-
-
   return (
     <>
       <Title>About — connectome-fs</Title>
@@ -20,7 +17,7 @@ export default function AboutPage() {
           AsciiDoc and published with Antora; this marketing site is SolidStart (static).
         </p>
         <p>
-          <a href={docsHref}>Documentation</a>
+          <A href="/docs">Documentation</A>
           {" · "}
           <a href="https://github.com/AMDphreak/connectome-fs">Source</a>
         </p>

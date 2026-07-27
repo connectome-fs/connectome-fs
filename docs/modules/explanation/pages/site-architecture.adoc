@@ -8,15 +8,16 @@ SolidStart is an **app framework**. They do not share a runtime component model.
 
 What *does* make sense is **concurrent use**:
 
-* SolidStart owns marketing, news, theme, and navigation chrome.
-* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle).
-* CI builds Antora into `site/public/docs/` so GitHub Pages serves both from one deploy.
+* SolidStart owns marketing, news, theme, docs onboarding (`/docs`), and navigation chrome.
+* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle) at `/manual/`.
+* CI builds Antora into `site/public/manual/` so GitHub Pages serves both from one deploy.
 * AsciiDoc sources stay in-repo (`docs/`) as the single authoring source.
 
 [source]
 ----
 /                 ← SolidStart (home, news, about)
-/docs/**          ← Antora static output (copied into public/docs)
+/docs             ← SolidStart onboarding gate → CTA into Antora
+/manual/**        ← Antora static output (copied into public/manual)
 ----
 
 == Live updates
@@ -26,5 +27,5 @@ If you later need true live preview, add a separate authoring preview (AsciiDoc 
 
 == Advisable?
 
-Yes: side-by-side static composition is the usual, low-friction pattern (many projects put Hugo/Antora under `/docs` next to a framework site).
+Yes: side-by-side static composition is the usual, low-friction pattern (framework site + Antora under a sibling path).
 Building a Solid “Antora loader” would reimplement Antora’s site assembler poorly and fight Antora’s extension ecosystem.
