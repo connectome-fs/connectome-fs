@@ -1,0 +1,11 @@
+= How to filter by context
+
+Pass context dimensions when listing so hierarchy views match the context bar
+model (Actor | Role | Category | …).
+
+[source,powershell]
+----
+cfs add --kind file --name notes.txt --actor user --role user --category Documents --creator me
+cfs ls --actor user --category Documents --sort display
+cfs query "actor:user category:Documents"
+----

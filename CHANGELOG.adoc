@@ -1,0 +1,16 @@
+= Changelog
+
+== 2026-07-26 — Initial connectome-fs bootstrap
+
+Details: link:changelog-details/2026-07-26 - initial bootstrap.adoc[2026-07-26 - initial bootstrap]
+
+* Renamed repository from `connectome-filesystem` to `connectome-fs`
+* Ingested Tri-Axis / Associative / Connectome Google Docs as ODT
+* Implemented Rust+SQLite core and `cfs` CLI (init/add/name/link/ls/query/search/demo)
+
+== 2026-07-26 — Site, Antora, bindings map
+
+* Logged language/wrapper targets in `docs/modules/explanation/pages/bindings.adoc`
+* SolidStart static site (`site/`) with news, about, system-aware theme toggle
+* Antora playbook publishes docs into `site/public/docs/`; GH Pages workflow
+* Documented SolidStart+Antora concurrent architecture

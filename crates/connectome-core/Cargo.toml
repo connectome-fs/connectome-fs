@@ -1,0 +1,15 @@
+[package]
+name = "connectome-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "GUID-addressed connectome graph: nodes, multi-names, associations, contexts"
+
+[dependencies]
+rusqlite = { workspace = true }
+uuid = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

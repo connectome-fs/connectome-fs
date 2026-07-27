@@ -1,0 +1,15 @@
+= How to use multi-names
+
+Attach several name tokens to one GUID so listing and search can use different
+comparators without renaming the underlying object.
+
+[source,powershell]
+----
+cfs name <guid> --role basename --value pcss
+cfs name <guid> --role version --value 1.2.3 --ordinal 1
+cfs name <guid> --role display --value pcss-1.2.3.zip --ordinal 2
+cfs name <guid> --list
+cfs ls --sort version
+----
+
+Roles: `display`, `basename`, `version`, `type`, `alias`, `publisher`.

@@ -1,0 +1,14 @@
+= Tutorial: vendor download names
+
+Problem: vendors re-upload `pcss.zip`; the browser saves `pcss (1).zip`. Other
+vendors version the filename, but old copies still clutter the folder.
+
+connectome-fs keeps one GUID per copy and multiple name tokens so both old and
+new remain visible when sorting by version or searching by basename.
+
+[source,powershell]
+----
+cargo run -p connectome-cli -- --db demo.db demo
+cargo run -p connectome-cli -- --db demo.db query "token:basename=pcss"
+cargo run -p connectome-cli -- --db demo.db ls --parent <downloads-guid> --sort version
+----

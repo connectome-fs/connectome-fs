@@ -1,0 +1,47 @@
+= Connectome Model (v0)
+:toc:
+
+This digests the Tri-Axis / Associative / Connectome Google Docs into the
+implementation model used by `connectome-fs`.
+
+== Hierarchy as entry, graph as truth
+
+Hierarchy is a *navigation slice*: a convenient root and folder-like walk for
+orientation. The durable model is a connectome of GUID-addressed nodes plus
+typed associations. Relative paths are fragile; GUIDs are not.
+
+== Node kinds
+
+* *File* — a data unit (blob or future block catalogue).
+* *Category* — broad classification (Documents, Music, Project).
+* *Group* — related items that should appear inline, not as a separate folder zone.
+* *Role* / *Context* — actor/role and working-set dimensions (User|My|Documents).
+
+Nodes may hold *dual citizenship* (group + category) with separate display names.
+
+== Multi-names
+
+A node has many *name tokens*, each with a role (`display`, `version`, `type`,
+`alias`, `basename`, `publisher`). Listing can sort by any token axis so
+`pcss.zip` and `pcss-1.2.3.zip` both remain findable without hiding older copies.
+
+== Associations
+
+Typed edges: `member-of`, `parent-of`, `related-to`, `generated-from`,
+`depends-on`. Local by default; global when published (future).
+
+== Context bar
+
+Ordered filters such as Actor → Role → Creator → Category → Working set.
+Example: `User | My | Documents`.
+
+== Sharded search
+
+Default mental branch is user-authored files. Shards:
+`user-authored`, `system`, `app-support`, `all`.
+RAG/embeddings are a later backend behind the `SearchShard` trait.
+
+== Source ODTs
+
+See `docs/gdrive-odt/` for exported originals and
+xref:sources.adoc[Source map].

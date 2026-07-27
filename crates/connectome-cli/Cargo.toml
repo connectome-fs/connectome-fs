@@ -1,0 +1,16 @@
+[package]
+name = "connectome-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "cfs — connectome-fs command-line interface"
+
+[[bin]]
+name = "cfs"
+path = "src/main.rs"
+
+[dependencies]
+connectome-core = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }
+uuid = { workspace = true }

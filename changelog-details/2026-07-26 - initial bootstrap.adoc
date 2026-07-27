@@ -1,0 +1,19 @@
+= 2026-07-26 — Initial connectome-fs bootstrap
+
+== What
+
+Stood up the `connectome-fs` workspace from the empty stub repo, imported design
+sources from Google Drive, and shipped a v0 library + CLI.
+
+== Highlights
+
+* GUID nodes with kinds File/Category/Group/Role/Context
+* Multi-name tokens and sort axes (basename, version, …)
+* Associations (`member-of`, `parent-of`, `related-to`, `generated-from`, `depends-on`)
+* Hierarchy view via `cfs ls`
+* Query language + sharded search (`user-authored` default)
+* Demo fixture for unversioned vendor downloads (`pcss.zip` vs `pcss-1.2.3.zip`)
+
+== Sources
+
+ODT exports under `docs/gdrive-odt/`.

@@ -1,0 +1,38 @@
+= Source Document Map
+
+Exported from Google Drive via rclone (`gdrive:`) as ODT.
+
+[cols="1,2,2"]
+|===
+|Topic |Drive location |Local ODT
+
+|Tri-axis index
+|Tri-Axis Project
+|`docs/gdrive-odt/tri-axis/Tri-axis Project Index.odt`
+
+|Vision
+|Tri-Axis Project
+|`docs/gdrive-odt/tri-axis/Vision.odt`
+
+|Project proposal
+|Associative File System
+|`docs/gdrive-odt/associative/Associative File System - Project Proposal.odt`
+
+|Research
+|Associative File System
+|`docs/gdrive-odt/associative/Associative File System - Research.odt`
+
+|Useful associations
+|Associative File System
+|`docs/gdrive-odt/associative/Associative Filesystem useful associations.odt`
+
+|Connectome scratch pad
+|Hierarchical File System
+|`docs/gdrive-odt/hierarchical/Connectome File System - more description.odt`
+|===
+
+Folder IDs (rclone `root_folder_id`):
+
+* Tri-Axis Project: `1oRRBV531oXvywOXOWuRmePVbLJkQXmqc`
+* Associative File System: `1pnKxw96_Ne3E89ZJH6XrwbaWIeyNIeDf`
+* Hierarchical File System: `1ancDaJOj2RaD7pmtlBd_oi5St_DmDDHa`

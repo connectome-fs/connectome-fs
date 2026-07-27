@@ -1,0 +1,23 @@
+= Query Grammar (v0)
+
+`cfs query` accepts a simple expression of space-separated filters.
+
+== Filters
+
+* `kind:<file|category|group|role|context>`
+* `shard:<user-authored|system|app-support|all>`
+* `actor:<name>`
+* `role:<name>`
+* `creator:<name>`
+* `category:<name>`
+* `token:<role>=<value>` — match a name token (e.g. `token:basename=pcss`)
+* `link:<assoc-type>` — nodes that participate in that association type
+* `text:<substring>` — substring match across name tokens
+
+== Examples
+
+----
+cfs query "shard:user-authored token:basename=pcss"
+cfs query "kind:file category:Documents"
+cfs query "link:generated-from"
+----

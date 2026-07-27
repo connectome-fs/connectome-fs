@@ -1,0 +1,30 @@
+= Site architecture: SolidStart + Antora
+:toc:
+
+== Does a “Solid extension that loads Antora” make sense?
+
+Not really. Antora is a **build-time** docs site generator (AsciiDoc → static HTML + UI bundle + extensions).
+SolidStart is an **app framework**. They do not share a runtime component model.
+
+What *does* make sense is **concurrent use**:
+
+* SolidStart owns marketing, news, theme, and navigation chrome.
+* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle).
+* CI builds Antora into `site/public/docs/` so GitHub Pages serves both from one deploy.
+* AsciiDoc sources stay in-repo (`docs/`) as the single authoring source.
+
+[source]
+----
+/                 ← SolidStart (home, news, about)
+/docs/**          ← Antora static output (copied into public/docs)
+----
+
+== Live updates
+
+Antora output is static. “Live on source update” means **rebuild** (push → Actions → Pages), not hot-reloading Antora inside Solid at runtime.
+If you later need true live preview, add a separate authoring preview (AsciiDoc → HTML) — that is not Antora-in-Solid.
+
+== Advisable?
+
+Yes: side-by-side static composition is the usual, low-friction pattern (many projects put Hugo/Antora under `/docs` next to a framework site).
+Building a Solid “Antora loader” would reimplement Antora’s site assembler poorly and fight Antora’s extension ecosystem.

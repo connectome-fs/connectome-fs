@@ -1,0 +1,18 @@
+= connectome-fs documentation
+:description: GUID-addressed connectome filesystem — hierarchy as view, graph as truth.
+
+Welcome. This Antora site is the docs surface for connectome-fs.
+The marketing / news site (SolidStart) links here under `/docs/`.
+
+== Start here
+
+* xref:tutorials:vendor-names.adoc[Tutorial: vendor download names]
+* xref:explanation:model.adoc[Connectome model]
+* xref:explanation:bindings.adoc[Language bindings]
+* xref:reference:query.adoc[Query grammar]
+
+== CLI
+
+----
+cargo run -p connectome-cli -- --db demo.db demo
+----

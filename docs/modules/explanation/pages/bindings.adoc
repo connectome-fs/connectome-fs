@@ -1,0 +1,53 @@
+= Language Bindings and Access Targets
+:toc:
+
+connectome-fs keeps a **Rust core** (store, mount path, FFI) and pours **D** into
+utilities and GUI tooling. Everything else binds through a stable boundary.
+
+== Architecture
+
+[cols="1,2"]
+|===
+|Layer |Language / mechanism
+
+|Store, index, future mount
+|Rust (`cdylib` + C ABI)
+
+|Explorer, admin, OOP-GUI tools
+|D (thin wrappers over C ABI)
+
+|Universal in-process access
+|C ABI header (baseline for all wrappers)
+
+|Zero-binding access for existing apps
+|FUSE / WinFsp / Dokan mount; WebDAV / SMB / SFTP gateway
+|===
+
+== Priority wrapper and ecosystem targets
+
+. *C ABI* — universal baseline; all other bindings hang off this.
+. *D* — first-class utilities + GUI impedance match.
+. *Python* — scripting, RAG/ML sharding, ops notebooks.
+. *Node / TypeScript* — Electron/web UIs, editor extensions.
+. *C# / .NET* — Windows Explorer-adjacent tools, WinUI.
+. *Go* — cloud agents, sync-style services.
+. *Java / JVM* — enterprise apps; Android tooling if needed later.
+. *Swift* — macOS Finder-adjacent clients.
+. *Shell / CLI* — `cfs` remains the ops front door.
+. *FUSE / WinFsp / Dokan* — mount as a real drive (no new language bindings).
+. *WebDAV / SMB / SFTP gateway* — Office, phones, NAS without native SDKs.
+. *gRPC / JSON-RPC daemon* — language-agnostic remote API when in-process FFI is not enough.
+
+== Rule of thumb
+
+Rust owns durability and mount. D owns interactive tools. C ABI + network
+gateways own “every other technology.”
+
+== SIMD (Rust core)
+
+Yes — Rust supports SIMD via `std::arch` / `std::simd` (portable SIMD) and crates
+like `packed_simd` / domain libs. It is *available* and used in high-perf code,
+but not always “easy”: you usually specialize hot paths (hashing, scanning name
+indexes, bulk association filters) behind feature detection, with scalar
+fallbacks. Prefer measuring first; the connectome v0 store is SQLite-bound long
+before SIMD matters.
