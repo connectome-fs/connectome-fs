@@ -6,15 +6,25 @@ import { ThemeProvider } from "~/lib/theme";
 import { SiteChrome } from "~/components/SiteChrome";
 import "./app.css";
 
+/** Vite/SolidStart BASE_URL is `/connectome-fs/`; Solid Router wants no trailing slash. */
+function routerBase(): string {
+  const raw = import.meta.env.BASE_URL || "/";
+  if (raw === "/") return "";
+  return raw.endsWith("/") ? raw.slice(0, -1) : raw;
+}
+
 export default function App() {
+  const base = routerBase();
+
   return (
     <MetaProvider>
       <Title>connectome-fs</Title>
       <ThemeProvider>
         <Router
+          base={base}
           root={(props) => (
             <SiteChrome>
-              <Suspense>{props.children}</Suspense>
+              <Suspense fallback={null}>{props.children}</Suspense>
             </SiteChrome>
           )}
         >

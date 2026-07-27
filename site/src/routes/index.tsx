@@ -3,7 +3,9 @@ import { For } from "solid-js";
 import { newsItems } from "~/lib/news";
 
 export default function Home() {
-  const docsHref = `${import.meta.env.BASE_URL}docs/`.replace(/\/{2,}/g, "/");
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+  const docsHref = `${base}/docs/`;
+
   const latest = newsItems.slice(0, 2);
 
   return (

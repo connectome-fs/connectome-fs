@@ -1,7 +1,9 @@
 import { Title } from "@solidjs/meta";
 
 export default function AboutPage() {
-  const docsHref = `${import.meta.env.BASE_URL}docs/`.replace(/\/{2,}/g, "/");
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+  const docsHref = `${base}/docs/`;
+
 
   return (
     <>

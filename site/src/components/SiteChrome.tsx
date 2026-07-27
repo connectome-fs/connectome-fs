@@ -2,12 +2,20 @@ import { A, useLocation } from "@solidjs/router";
 import type { ParentComponent } from "solid-js";
 import { useTheme } from "~/lib/theme";
 
-const docsHref = `${import.meta.env.BASE_URL}docs/`.replace(/\/{2,}/g, "/");
+function withBase(path: string): string {
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+  if (!base || base === "") return path;
+  if (path === "/") return `${base}/`;
+  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+const docsHref = withBase("/docs/");
 
 export const SiteChrome: ParentComponent = (props) => {
   const location = useLocation();
   const theme = useTheme();
 
+  // With Router `base`, location.pathname is already stripped of the base prefix.
   const current = (path: string) =>
     location.pathname.replace(/\/$/, "") === path.replace(/\/$/, "") ? "page" : undefined;
 
