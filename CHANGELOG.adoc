@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-08-04 — Editions, VCS collapse, projection
+
+Details: link:changelog-details/2026-08-04 - editions and projection.adoc[2026-08-04 - editions and projection]
+
+* Documented folder/file editions, VCS Phase A→B collapse, compatibility projection, app connection offload, and shell query surface
+* Reserved experimental `edition:` / `fork:` query filters
+* Cross-linked Dev-Centr, HCI Nerdz, and OpenShellOrg audience pieces
+
 == 2026-07-26 — Initial connectome-fs bootstrap
 
 Details: link:changelog-details/2026-07-26 - initial bootstrap.adoc[2026-07-26 - initial bootstrap]

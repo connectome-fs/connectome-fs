@@ -1,0 +1,65 @@
+= Compatibility projection
+:toc:
+
+The connectome is a graph. Many tools and habits still expect a
+*hierarchical address space*—paths with `/` or `\`, a current directory,
+and directory listings. A *compatibility projection* materializes a
+hierarchical view of graph edges and edition bindings without making
+that hierarchy the storage truth.
+
+== What we refuse
+
+Do *not* reserve ordinary alphanumeric characters from the user
+filename namespace to encode editions, versions, or alternate
+hierarchies. That recreates PATH and package-manager pollution, fights
+cross-OS naming rules, and punishes every app that assumes normal
+names.
+
+Sibling “version folders” inside a listing (`project/v1`, `project/v2`)
+are also the wrong default UX: editions are orthogonal to children, not
+peers the user must scroll past.
+
+== What we allow
+
+=== Primary: process edition context
+
+The same path string resolves through the process’s edition context.
+No characters are stolen from names. See xref:editions.adoc[Editions].
+
+=== Secondary: out-of-band selectors
+
+When an explicit fork must appear in a string (scripts, URLs, debug
+dumps), reuse syntax that is already illegal or out-of-band for normal
+filenames:
+
+* Windows alternate-data-stream style `path:edition`
+* Virtual roots outside user trees (e.g. `\\cfs\editions\{id}\…`)
+* Query / context filters (`edition:…`) rather than path segments
+
+Never carve letters out of the user-visible namespace to mean “fork.”
+
+=== Hidden reservation: structural projection roots only
+
+Machine-managed structural roots may exist to *project* graph
+relationships into a tree for legacy `chdir` / Explorer walks. Those
+roots are not user content folders. User-visible names stay unrestricted
+within ordinary OS rules.
+
+Examples of structural (not user) concerns: edition mount points,
+system association-projection anchors, shard roots for search UX.
+
+== Multi-hierarchy compression
+
+Many logical hierarchies (Documents-by-project, Photos-by-date,
+Code-by-repo) can share the same nodes via associations. The projection
+layer may expose *one* hierarchical walk at a time—chosen by context
+bar, query, or session—without duplicating bytes or forcing every
+hierarchy into one polluted tree of sibling version folders.
+
+== Related
+
+* xref:editions.adoc[Editions]
+* xref:model.adoc[Connectome model]
+* xref:shell-query-surface.adoc[Shell query surface]
+* link:https://openshellorg.github.io/shell-architecture/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]

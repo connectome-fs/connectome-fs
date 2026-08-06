@@ -31,6 +31,19 @@ Exported from Google Drive via rclone (`gdrive:`) as ODT.
 |`docs/gdrive-odt/hierarchical/Connectome File System - more description.odt`
 |===
 
+== Antora design chapters (2026)
+
+These explanation pages extend the ODT digest for editions, VCS
+collapse, compatibility projection, app connection offload, and shell
+query surfaces—driven by the git-concurrency / connectome thesis, not
+present as first-class chapters in the 2019 ODTs:
+
+* xref:editions.adoc[Editions]
+* xref:vcs-collapse.adoc[VCS collapse over editions]
+* xref:compatibility-projection.adoc[Compatibility projection]
+* xref:app-connection-offload.adoc[App connection offload]
+* xref:shell-query-surface.adoc[Shell query surface]
+
 Folder IDs (rclone `root_folder_id`):
 
 * Tri-Axis Project: `1oRRBV531oXvywOXOWuRmePVbLJkQXmqc`

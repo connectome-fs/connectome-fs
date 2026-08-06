@@ -1,0 +1,54 @@
+= Shell query surface
+:toc:
+
+v0 ships a space-separated filter grammar (`cfs query`) documented in
+xref:reference:query.adoc[Query grammar]. That is a *search* surface.
+The longer intent is a shell-facing *navigation* surface: leaving
+strictly hierarchical `cwd` as the only namespace for “where am I?”
+
+OpenShellOrg owns the CLI / structured-pipeline product thesis
+(Nushell, SOS for flags). This page states the filesystem-side
+contract those shells should consume.
+
+== From filters to navigation
+
+Today: filters narrow a result set (`kind:`, `category:`, `token:`,
+`link:`).
+
+Next:
+
+* *Edition-aware queries* — experimental `edition:` / `fork:` filters
+  (see query reference).
+* *Association walks* — treat `link:generated-from` (and future walk
+  operators) as first-class movement, not only search hits.
+* *Cwd-as-query* — a shell session’s “location” can be a saved context
+  or query cursor over the connectome, with an optional hierarchical
+  xref:compatibility-projection.adoc[compatibility projection] for
+  legacy tools that still `chdir`.
+
+== Division of labor
+
+[cols="1,2"]
+|===
+| Layer | Owner
+
+| Node kinds, associations, editions, projection rules
+| connectome-fs (this manual)
+
+| Flag syntax (SOS), structured stdout, entrypoint dispatch
+| OpenShellOrg
+
+| How developers configure shells and toolchains on a machine
+| Dev-Centr
+
+| Human FS metaphors, Explorer honesty, attention
+| HCI Nerdz
+|===
+
+== Related
+
+* xref:reference:query.adoc[Query grammar]
+* xref:compatibility-projection.adoc[Compatibility projection]
+* xref:editions.adoc[Editions]
+* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://openshellorg.github.io/shell-architecture/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]

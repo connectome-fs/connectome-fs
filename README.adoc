@@ -1,8 +1,44 @@
-= connectome-fs
-:toc:
+ifndef::env-github[:icons: font]
+:toc: preamble
 :toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/AMDphreak/connectome-fs.svg?style=for-the-badge[Contributors,link=https://github.com/AMDphreak/connectome-fs/graphs/contributors]
+image:https://img.shields.io/github/forks/AMDphreak/connectome-fs.svg?style=for-the-badge[Forks,link=https://github.com/AMDphreak/connectome-fs/network/members]
+image:https://img.shields.io/github/stars/AMDphreak/connectome-fs.svg?style=for-the-badge[Stars,link=https://github.com/AMDphreak/connectome-fs/stargazers]
+image:https://img.shields.io/github/issues/AMDphreak/connectome-fs.svg?style=for-the-badge[Issues,link=https://github.com/AMDphreak/connectome-fs/issues]
+image:https://img.shields.io/github/license/AMDphreak/connectome-fs.svg?style=for-the-badge[License,link=https://github.com/AMDphreak/connectome-fs/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/AMDphreak/connectome-fs.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/AMDphreak/connectome-fs.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/AMDphreak/connectome-fs.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/AMDphreak/connectome-fs.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/AMDphreak/connectome-fs.svg?style=for-the-badge[License]
+endif::[]
+
+= connectome-fs
 
 Modern graph-based flat filesystem prototype: GUID-addressed nodes, multi-name tokens, hierarchy as a navigation view, typed associations, context filters, and sharded search.
+
+link:https://amdphreak.github.io/connectome-fs/[Explore the docs] ·
+link:https://github.com/AMDphreak/connectome-fs/issues[Report Bug] ·
+link:https://github.com/AMDphreak/connectome-fs/issues[Request Feature]
+
+== About The Project
+
+Modern graph-based flat filesystem: GUID-addressed nodes, multi-name tokens, hierarchy as a navigation view, typed associations, context filters, and sharded search.
+
+Hierarchy is an entry point into the connectome, not the source of truth. Associations and multi-names carry relationships that trees alone cannot.
+
+== Built With
+
+* Rust
+* SQLite
+* SolidStart (site)
+* Antora (manual)
 
 == Changelog
 
@@ -59,8 +95,6 @@ cfs --db connectome.db search pcss --shard all
 * link:docs/modules/explanation/pages/bindings.adoc[Language bindings and access targets]
 * link:docs/modules/explanation/pages/site-architecture.adoc[SolidStart + Antora]
 
-Hierarchy is an entry point into the connectome, not the source of truth. Associations and multi-names carry relationships that trees alone cannot.
-
 == Reference
 
 * CLI: `cfs init|add|name|link|ls|query|search|demo`
@@ -89,6 +123,17 @@ pnpm build
 
 Enable *Settings → Pages → Source: GitHub Actions* once on the repo.
 
+== Contributing
+
+Contributions are welcome. Open an issue to discuss larger changes before submitting a pull request.
+
 == License
 
 MIT — see `LICENSE`.
+
+== Contact
+
+Ryan Johnson — link:https://twitter.com/amdphreak[@amdphreak]
+
+* Project: https://github.com/AMDphreak/connectome-fs
+* Site: https://amdphreak.github.io/connectome-fs/

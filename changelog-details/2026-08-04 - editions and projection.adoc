@@ -1,0 +1,12 @@
+= 2026-08-04 — Editions and projection
+
+Expanded the Antora explanation set with canonical vocabulary for the
+git-concurrency → connectome-fs thesis:
+
+* *Editions* — CoW folder/file forks with process edition context
+* *VCS collapse* — Phase A userspace bridge vs Phase B FS-native editions
+* *Compatibility projection* — hierarchical views without alphanumeric name reservation
+* *App connection offload* — shared associations for media/project apps
+* *Shell query surface* — FS contract for graph navigation (OpenShellOrg owns CLI thesis)
+
+Sibling org articles deep-link here rather than duplicating the model.

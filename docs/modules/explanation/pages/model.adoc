@@ -41,6 +41,19 @@ Default mental branch is user-authored files. Shards:
 `user-authored`, `system`, `app-support`, `all`.
 RAG/embeddings are a later backend behind the `SearchShard` trait.
 
+== Editions and projection (forward)
+
+Hierarchy-as-slice is not enough for concurrent workspaces. See
+xref:editions.adoc[Editions] (process-scoped fork bindings),
+xref:compatibility-projection.adoc[Compatibility projection]
+(hierarchical views without stealing alphanumeric names), and
+xref:vcs-collapse.adoc[VCS collapse over editions].
+
+Apps that reinvent private connection graphs should lean on
+xref:app-connection-offload.adoc[App connection offload]. Shells that
+outgrow cwd-only navigation: xref:shell-query-surface.adoc[Shell query
+surface].
+
 == Source ODTs
 
 See `docs/gdrive-odt/` for exported originals and

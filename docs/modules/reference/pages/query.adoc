@@ -14,10 +14,22 @@
 * `link:<assoc-type>` — nodes that participate in that association type
 * `text:<substring>` — substring match across name tokens
 
+=== Experimental (not in v0 CLI)
+
+These filters are reserved for edition-aware navigation. Parsers may
+accept and ignore them until editions land; do not invent alphanumeric
+path hacks instead. See xref:explanation:editions.adoc[Editions] and
+xref:explanation:shell-query-surface.adoc[Shell query surface].
+
+* `edition:<id|name>` — constrain results to a named edition binding
+* `fork:<id|name>` — synonym for `edition:` (legacy wording)
+
 == Examples
 
 ----
 cfs query "shard:user-authored token:basename=pcss"
 cfs query "kind:file category:Documents"
 cfs query "link:generated-from"
+# experimental:
+cfs query "edition:agent-try-3 kind:file category:Documents"
 ----

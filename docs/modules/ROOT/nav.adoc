@@ -6,6 +6,11 @@
 ** xref:howto:contexts.adoc[Contexts]
 * Explanation
 ** xref:explanation:model.adoc[Connectome model]
+** xref:explanation:editions.adoc[Editions]
+** xref:explanation:vcs-collapse.adoc[VCS collapse over editions]
+** xref:explanation:compatibility-projection.adoc[Compatibility projection]
+** xref:explanation:app-connection-offload.adoc[App connection offload]
+** xref:explanation:shell-query-surface.adoc[Shell query surface]
 ** xref:explanation:bindings.adoc[Bindings & access targets]
 ** xref:explanation:sources.adoc[Source docs map]
 ** xref:explanation:site-architecture.adoc[Site + Antora]

@@ -1,0 +1,93 @@
+= Editions (folder and file forks)
+:toc:
+
+An *edition* is an alternate binding of a directory or file that shares
+storage with its siblings through copy-on-write extents. Editions are
+orthogonal to the children listed inside a folder: many folders may each
+have many editions without those editions appearing as peer entries in
+a directory listing.
+
+This is the late-stage filesystem primitive that collapses much of what
+today's VCS and worktree stacks fake in userspace. See
+xref:vcs-collapse.adoc[VCS collapse over editions] for the Phase A → B
+bridge.
+
+== Problem editions solve
+
+Hierarchical filesystems present one live tree per mount. Concurrent
+feature work, agent sandboxes, and side-by-side implementation comparison
+then require either:
+
+* separate physical trees (Git worktrees) that break absolute-path
+  assumptions in apps, LSPs, and build tools, or
+* in-place virtual staging (e.g. GitButler lanes) that fights native Git
+  CLI expectations.
+
+Editions move multi-state directory management into the VFS: the same
+path string can resolve to different content depending on *which edition*
+the resolving process is bound to.
+
+== Process edition context
+
+Path resolution (`namei`) consults a process- or session-scoped
+*edition context* (analogous to `proc->active_fs_fork`). An IDE, build
+runner, or agent opens `/workspace/src/main.c` and receives the binding
+for its edition. Absolute paths stay stable; concurrent processes need
+not share one live tree.
+
+Listing a directory under an edition shows that edition's children—not
+a menu of every historical or parallel edition of the directory itself.
+
+== Copy-on-write and comparison
+
+Creating an edition is an O(1) metadata allocation against CoW storage.
+Modified extents diverge; unmodified blocks stay shared.
+
+Kernel- or FS-level comparison across editions (`fs_diff(edition_A,
+edition_B)`) supports side-by-side and agent-vs-human review without
+checking out either tree into a second physical path.
+
+Abandoning a failed agent attempt drops the edition reference; the
+allocator reclaims diverged extents without dirtying the parent edition
+or running ad-hoc `git clean`-style cleanup.
+
+== Agent micro-forking
+
+Agents should not mutate the human operator's interactive edition.
+They request an ephemeral edition off a target directory, emit
+structured diffs against the graph, and either reparent (merge) or
+drop the edition. Contaminating the primary workspace is a process
+boundary failure, not an inevitable cost of concurrency.
+
+== Contrast with existing mechanisms
+
+[cols="1,2"]
+|===
+| Mechanism | How editions differ
+
+| Apple resource forks / NTFS ADS
+| Alternate *streams on one file*, not alternate *directory trees*
+with process-scoped path resolution.
+
+| Git worktrees
+| Separate checkouts and paths; editions keep one logical path and
+fork at the inode/extent layer.
+
+| Multi-name `version` tokens (v0)
+| Name tokens sort and find releases (`pcss` / `1.2.3`). Editions
+are live, writable parallel bindings—not merely labeled copies in a
+listing.
+
+| Context bar filters
+| Contexts narrow *which nodes appear* in a working set. Edition
+context selects *which binding* a path resolves to.
+|===
+
+== Related
+
+* xref:vcs-collapse.adoc[VCS collapse over editions]
+* xref:compatibility-projection.adoc[Compatibility projection]
+* xref:app-connection-offload.adoc[App connection offload]
+* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
+* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]

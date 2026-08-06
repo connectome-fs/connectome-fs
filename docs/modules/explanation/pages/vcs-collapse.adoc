@@ -1,0 +1,68 @@
+= VCS collapse over editions
+:toc:
+
+When the filesystem natively supports xref:editions.adoc[editions],
+version-control tools stop owning working trees, object stores that
+duplicate file bytes, and destructive checkouts. They shrink to a
+*graph orchestrator* plus *semantic merge*.
+
+== Two phases
+
+=== Phase A — userspace bridge (today → near term)
+
+Until editions exist in the VFS, concurrency still needs a layered
+userspace stack. These tiers are complementary, not competing products:
+
+. *Process-scoped mount / path virtualization* — each IDE, agent, or
+  build runner sees a stable logical root (e.g. `/workspace`) mapped to
+  its revision, without changing absolute paths apps hard-code.
+. *Working-copy-as-revision graph* (operation-log engines in the spirit
+  of Jujutsu) — uncommitted edits are anonymous revisions; no fragile
+  single index; conflicts can be first-class graph state.
+. *Copy-on-write storage and content-addressable caches* — reflinks /
+  OverlayFS / APFS clones plus shared dependency stores so concurrent
+  workspaces are cheap.
+. *Headless agent sandboxes* — ephemeral namespaces attached to distinct
+  heads; success reparents; failure drops without touching the human
+  workspace.
+
+Git worktrees address only “more than one checkout.” GitButler-style
+virtual branches address hunk assignment in one working directory.
+Neither fully solves path stability, agent isolation, and cheap
+multi-workspace storage together. Phase A is the honest interim
+architecture.
+
+=== Phase B — filesystem editions
+
+With editions:
+
+* Creating a “branch” requests a new edition id on a directory.
+* “Commit” / tag marks a point-in-time edition state in the connectome
+  graph.
+* Rebase- and cherry-pick-like remapping lean on CoW extent operations
+  rather than userspace read/diff/write pipelines over a single live
+  tree.
+* The VCS no longer needs a shadow copy of every blob in `.git/objects`
+  for the working tree itself (history metadata and remote sync remain
+  product concerns).
+
+== What must stay above the filesystem
+
+Filesystems operate on extents, blocks, and bytes. They do not
+understand language ASTs.
+
+* *Semantic three-way merge* — conflict presentation can surface
+  conflicting editions; resolving code meaning stays in merge engines.
+* *Non-filesystem state leaks* — daemons, sockets, global lockfiles,
+  `/tmp`, and shared compiler services bypass folder isolation.
+  Process boundaries remain necessary regardless of how rich the tree
+  model becomes.
+
+== Related
+
+* xref:editions.adoc[Editions]
+* xref:compatibility-projection.adoc[Compatibility projection]
+* xref:shell-query-surface.adoc[Shell query surface]
+* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]
+* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]

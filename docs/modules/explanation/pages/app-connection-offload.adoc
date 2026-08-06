@@ -1,0 +1,54 @@
+= App connection offload
+:toc:
+
+Applications that work with user media and projects repeatedly reinvent
+the same graph: which assets belong to which project, which file was
+generated from which source, which timeline clip points at which clip
+media, which edit is a variant of which master.
+
+Connectome-fs’s job is to *own that shared connection structure* so
+apps express novel behavior on top of a common model instead of each
+shipping a private silo of paths and sidecars.
+
+== Shared structure
+
+Associations already sketched in the model (`generated-from`,
+`member-of`, `related-to`, `depends-on`) plus xref:editions.adoc[editions]
+for parallel edits cover the bulk of what photo editors, NLEs, and
+similar tools reimplement:
+
+* *Project membership* — groups and categories as first-class nodes,
+  not only folders on disk.
+* *Provenance* — `generated-from` (export, render, transcode) instead of
+  fragile sidecar path conventions alone.
+* *Variants* — editions or related nodes for alternate grades, cuts,
+  or crops without duplicating the entire library tree.
+* *Working sets* — context bar / shards so system and app-support noise
+  does not drown user-authored media.
+
+== What apps keep
+
+Apps still own *domain semantics*: color science, timeline UI, codec
+choices, brush engines. They should not each own a second filesystem
+for “which files relate how.” Mildly different novel workflows
+(photo library vs video project vs audio session) share connection
+primitives and diverge in presentation and tools.
+
+== Organizational simplification
+
+When the OS and filesystem genericize connection modeling:
+
+* Fewer per-app proprietary catalogs fighting over the same bytes.
+* Cross-app handoff (edit in A, finish in B) becomes association walks,
+  not export/import path archaeology.
+* User mental model aligns with one connectome, many surfaces—see
+  HCI Nerdz coverage of the UX implications.
+
+== Related
+
+* xref:model.adoc[Connectome model]
+* xref:editions.adoc[Editions]
+* xref:howto:contexts.adoc[Contexts]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
+* link:https://hci-nerdz.github.io/blog/offloading-connection-modeling/[HCI Nerdz blog: Offloading connection modeling]
+* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
