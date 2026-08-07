@@ -2,7 +2,7 @@
 *
 !.gitignore
 !LICENSE
-!README.adoc
+!README.md
 !CHANGELOG.adoc
 !MEMORIES.md
 !Cargo.toml
