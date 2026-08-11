@@ -1,0 +1,43 @@
+= Paths are labels, not identity
+:description: Why connectome-fs treats pretty paths as navigation — and how that matches the HCI Nerdz “navigating by content” stack for the web and DevX.
+:revdate: 2026-08-11
+:keywords: blog, identity, content-addressing, hci-nerdz, navigating-by-content
+
+I do not want to memorize where a file lives.
+I want the *thing* — the feature, the doc, the asset — and I want renames to change the nameplate, not the wiring.
+
+That is the connectome-fs bet: store associations as a graph; treat folder paths as a projection people can browse.
+It is also the HCI Nerdz claim for the public web: canonical URLs are for human convenience, not for functional dependency.
+
+== What breaks today
+
+A docs URL gets pasted into another repo.
+Someone improves the path.
+Half the citations rot.
+Developers pay attention tax that should have been a pointer update — or never a string wire at all.
+
+Package registries already track reverse dependents for code.
+Prose never got the equivalent.
+Connectome-fs wants reverse edges in the store itself.
+
+== The stack we agree on
+
+. *Content identity (hash / node id) for “same thing”: stem:[Hash(Bytes_{old}) = Hash(Bytes_{new})] when only the path moves
+. *Mutable human pointer* for “current edition of this intent” after stem:[Hash(Bytes_{v1}) \neq Hash(Bytes_{v2})]
+. *Reverse consumers* for leftover labels on today's web
+. *Redirects* while the classical web remains string-shaped
+
+[source,mermaid]
+----
+flowchart LR
+  Label[Pretty path] -.-> Node[Node / hash]
+  Node --> Edge[depends-on / cites]
+----
+
+== Where to read next
+
+* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] — gut check
+* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] — layers
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz docs — Navigating by content]
+* link:https://connectome-fs.github.io/connectome-fs/docs/[connectome-fs docs hub] — open *Navigating by content*
+* link:https://hci-nerdz.github.io/demos/navigating-by-content/[Rename demo]

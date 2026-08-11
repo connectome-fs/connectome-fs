@@ -1,0 +1,6 @@
+= Navigating by content — changelog detail
+
+* Antora `explanation/navigating-by-content.adoc` + icon asset
+* Cross-links from semantic change units and hub index
+* Site blog `paths-are-labels-not-identity.adoc`
+* Mermaid: Antora supplemental JS/CSS; SolidStart `bootMermaid` on blog posts

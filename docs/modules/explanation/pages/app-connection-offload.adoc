@@ -51,4 +51,4 @@ When the OS and filesystem genericize connection modeling:
 * xref:howto:contexts.adoc[Contexts]
 * link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
 * link:https://hci-nerdz.github.io/blog/offloading-connection-modeling/[HCI Nerdz blog: Offloading connection modeling]
-* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]

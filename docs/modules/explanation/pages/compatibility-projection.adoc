@@ -61,5 +61,5 @@ hierarchy into one polluted tree of sibling version folders.
 * xref:editions.adoc[Editions]
 * xref:model.adoc[Connectome model]
 * xref:shell-query-surface.adoc[Shell query surface]
-* link:https://openshellorg.github.io/shell-architecture/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
+* link:https://docs.opensh.org/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
 * link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]

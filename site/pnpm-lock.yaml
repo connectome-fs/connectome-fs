@@ -24,6 +24,9 @@ importers:
         specifier: ^0.5.11
         version: 0.5.11(@parcel/watcher@2.6.0)(db0@0.3.4)(ioredis@5.11.1)(jiti@2.7.0)(terser@5.49.0)
     devDependencies:
+      '@asciidoctor/core':
+        specifier: ^4.0.5
+        version: 4.0.8
       typescript:
         specifier: ^5.8.2
         version: 5.9.3
@@ -32,6 +35,10 @@ importers:
         version: 2.11.13(solid-js@1.9.14)(vite@6.4.3(jiti@2.7.0)(terser@5.49.0))
 
 packages:
+
+  '@asciidoctor/core@4.0.8':
+    resolution: {integrity: sha512-Yg/ILwZbjoBIhdQV4PZ5VtCnfn+DQgdt6iBI4wqpZv3y8e7d2tU663os9RsQmaTxSa6XyitASpUn4JxG6PYtFg==}
+    engines: {node: '>=20'}
 
   '@babel/code-frame@7.26.2':
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
@@ -2693,6 +2700,8 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@asciidoctor/core@4.0.8': {}
 
   '@babel/code-frame@7.26.2':
     dependencies:

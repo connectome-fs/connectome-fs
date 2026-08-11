@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>connectome-fs News</title>
+    <link>https://connectome-fs.github.io/connectome-fs/news</link>
+    <description>Project news for the connectome-fs substrate</description>
+    <item>
+      <title>Features are not files</title>
+      <link>https://connectome-fs.github.io/connectome-fs/news/2026-08-09-semantic-change-units</link>
+      <guid isPermaLink="true">https://connectome-fs.github.io/connectome-fs/news/2026-08-09-semantic-change-units</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Why Git feels hard when the unit of change is a path — and how connectome semantic units + syntax-aware auto-forward aim higher.</description>
+    </item>
+    <item>
+      <title>connectome-fs becomes its own org</title>
+      <link>https://connectome-fs.github.io/connectome-fs/news/2026-08-09-org-launch</link>
+      <guid isPermaLink="true">https://connectome-fs.github.io/connectome-fs/news/2026-08-09-org-launch</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>The graph filesystem substrate moves under github.com/connectome-fs — Dev-Centr, HCI-Nerdz, and OpenShellOrg stay partner audiences, not owners of the VFS.</description>
+    </item>
+  </channel>
+</rss>

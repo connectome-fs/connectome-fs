@@ -1,0 +1,97 @@
+= Semantic change units
+:navtitle: Semantic change units
+:description: Why Git feels hard when features are not files—intra-file unrelated work, missing dependency edges, team sync collisions, Unison, and syntax-aware auto-forward on a connectome.
+:toc:
+
+Git is excellent at what it models: a content-addressed *blob ledger* plus a commit DAG over tree snapshots.
+It is awkward at what developers actually edit: *features*, *fixes*, and *dependency edges* that cut across files—and sometimes share a file with unrelated neighbors.
+
+That mismatch is not a skill issue.
+It is a missing layer of meta-information.
+Connectome-fs exists to make that layer native: GUID-addressed nodes, typed associations, and editions—so hierarchy stays a navigation slice and the graph stays truth.
+
+image::git-blobs-vs-graph-units.webp[Git sees opaque file blobs with mixed features; a connectome sees feature nodes, dependency edges, and files as projections]
+
+== Two silences in Git's model
+
+=== Unrelated features inside one file
+
+A single `utils.ts` often hosts several independent units of work: `formatDate`, `parseFlags`, a one-line typo in a helper name.
+Git's first-class commit unit is still “these paths at this tree.”
+Partial commits (`git add -p`) and virtual-branch tools paper over hunk assignment, but the object model never learns that two functions were *orthogonal features*.
+The history cannot answer “give me every change that belonged to feature B” without human archaeology of hunks and messages.
+
+=== Dependencies between files
+
+Build systems and language servers know that `api.ts` depends on `auth.ts`.
+Git does not.
+A pull that updates an interface in one file and a call site in another is two path diffs with no edge.
+Merge tools reconcile bytes; they do not carry a dependency graph that could say “these edits travel together” or “these edits cannot conflict because they do not share a semantic neighborhood.”
+
+== Team sync as false coupling
+
+The everyday ritual:
+
+. Alice commits a typo fix in `formatDate`.
+. Bob is mid-edit on `parseFlags` in the *same* file—an unrelated function.
+. Bob `git stash`, `git pull`, `git stash pop`.
+. The tool surfaces a conflict or a noisy diff because the *file* changed, not because Bob's feature depended on Alice's typo.
+
+image::team-sync-unrelated-hunk.webp[Alice commits a typo; Bob stashes and pulls and hits a conflict on an unrelated function in the same file; syntax-aware forward avoids the collision]
+
+The second person was not touching the system Alice changed.
+Git has no way to know that.
+File identity is the only coupling it trusts, so unrelated work collides at the blob boundary.
+
+== What a graph / dependency model adds
+
+A connectome-shaped store can treat:
+
+* *Functions, types, modules, docs, and assets* as addressable nodes (or finer grains as the language binding matures)
+* *depends-on*, *implements*, *generated-from*, *related-to* as first-class edges
+* *Editions* as process-scoped bindings over the same path string (see xref:editions.adoc[Editions])
+* *Commits* as graph transactions: “these semantic units advanced,” not only “these paths hashed differently”
+
+Version control then shrinks toward remote sync, review policy, and semantic merge—see xref:vcs-collapse.adoc[VCS collapse over editions]—instead of owning working trees *and* pretending files are features.
+
+== Unison and friends
+
+link:https://www.unison-lang.org/[Unison] attacks a sibling problem from the language side: definitions are content-addressed; rename and refactor become graph operations rather than text churn across a tree of files.
+That is the right *unit of identity* for code meaning.
+
+Connectome-fs aims at the *filesystem and association* plane underneath many languages and non-code artifacts—so dependency and edition metadata are not trapped inside one runtime.
+Unison shows the destination for code; connectome-fs is the substrate that should make “feature as node” ordinary even when the editor still shows folders.
+
+== Syntax-aware auto-forward
+
+Some changes are morally *broadcasts*: fix a typo in an identifier, tighten a docstring, reformat within an AST node with no semantic shift.
+In a file-diff world, those broadcasts still collide with anyone editing the same path.
+In a syntax-aware graph world, the patch attaches to a node id and can *auto-forward* into peer editions when the merge engine proves non-interference (same definition identity, no overlapping semantic edit).
+
+image::syntax-aware-autoforward.webp[AST typo patch auto-forwards into peer editions; Git line-diff conflict markers shown as the contrast case]
+
+That is not replacing human review for behavioral changes.
+It is refusing to punish teammates for orthogonal work—or for sharing a file with a typo.
+
+== Relationship to concurrency editions
+
+xref:vcs-collapse.adoc[VCS collapse] and the Dev-Centr essay on
+link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Git concurrency enshittification]
+focus on *many live trees* (worktrees, virtual branches, Phase A bridges, filesystem editions).
+
+This page focuses on a different cut: even with one tree, Git's *unit of change* is wrong for feature work.
+Editions without semantic units still merge blobs.
+Semantic units without editions still thrash working copies.
+Together they explain why modern Git UX keeps inventing escape hatches—and why the durable fix is graph-native storage.
+
+== Related
+
+* xref:navigating-by-content.adoc[Navigating by content]
+* xref:model.adoc[Connectome model]
+* xref:editions.adoc[Editions]
+* xref:vcs-collapse.adoc[VCS collapse over editions]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz: Navigating by content]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]
+* link:https://www.unison-lang.org/[Unison language]

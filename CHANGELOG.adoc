@@ -1,5 +1,27 @@
 = Changelog
 
+
+== 2026-08-11 � Math formula plumbing
+
+* Enable stem: latexmath and KaTeX (site-math.js) on every docs page, even when unused
+
+== 2026-08-11 — Navigating by content
+
+Details: link:changelog-details/2026-08-11 - navigating-by-content.adoc[2026-08-11 - navigating-by-content]
+
+* Docs explanation linking the CAS / pointer / consumers stack to HCI Nerdz
+* Blog: *Paths are labels, not identity*; Mermaid boot on blog posts; Antora Mermaid supplemental
+
+== 2026-08-09 — connectome-fs org + Signal Field site
+
+Details: link:changelog-details/2026-08-09 - semantic change units.adoc[2026-08-09 - semantic change units]
+
+* Repository under `connectome-fs/connectome-fs` (dedicated systems org)
+* SolidStart site redesign (**Signal Field**): banner field, nav below, news/blog/roadmap from AsciiDoc
+* Antora docs on Valentus theme with org brand overlay; partner footer
+* Docs served at `/docs/` (Antora into `site/public/docs/`)
+* Semantic change units essay; partner essays on Dev-Centr / HCI-Nerdz
+
 == 2026-08-04 — Editions, VCS collapse, projection
 
 Details: link:changelog-details/2026-08-04 - editions and projection.adoc[2026-08-04 - editions and projection]

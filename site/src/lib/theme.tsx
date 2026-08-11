@@ -28,7 +28,10 @@ function systemTheme(): Theme {
 
 function apply(theme: Theme) {
   if (isServer || typeof document === "undefined") return;
-  document.documentElement.dataset.theme = theme;
+  const root = document.documentElement;
+  root.dataset.theme = theme;
+  // CSS on `html` / `body` cross-fades via --theme-fade; force a paint tick for stubborn UAs.
+  root.style.setProperty("color-scheme", theme);
 }
 
 export const ThemeProvider: ParentComponent = (props) => {

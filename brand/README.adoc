@@ -1,0 +1,14 @@
+= Brand assets
+
+Canonical mark for connectome-fs: a **pink-dominant neuronal brain** (teal accents). The cortex outline is axons and synapses — not a DevCentr hub tile.
+
+* `logo.svg` — dark field tile + neuronal brain (shared geometry with the mark)
+* `logo-mark.svg` — transparent mark for light backgrounds (same paths/nodes as `logo.svg`)
+* `favicon.svg` — simplified 9-node version for low-res tabs
+* `logo-{16,32,48,64,128,256,512}.png` — raster exports (optional)
+* `logo-mark-*.png` — mark rasters (optional)
+
+Regenerate SVGs: `python brand/_gen_logos.py`
+
+Site: `site/public/favicon.svg`, `site/public/brand/logo.svg`, Antora `supplemental-ui/img/logo.svg`.
+Org profile: `connectome-fs/.github/brand/`.

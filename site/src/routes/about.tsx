@@ -1,27 +1,31 @@
 import { Title } from "@solidjs/meta";
-import { A } from "@solidjs/router";
 
-export default function AboutPage() {
+export default function About() {
   return (
     <>
       <Title>About — connectome-fs</Title>
-      <section class="section" style={{ "border-top": "none", "padding-top": "0.5rem" }}>
-        <h2>About</h2>
-        <p class="lead">
-          connectome-fs explores a filesystem where hierarchy is only a navigation slice into a richer
-          associative graph — inspired by the Tri-Axis / Associative File System design notes.
+      <h1 style={{ "font-family": "var(--font-display)", "letter-spacing": "-0.03em" }}>About</h1>
+      <p class="page-lede">
+        connectome-fs is a graph-native filesystem substrate: GUID-addressed nodes, multi-name
+        tokens, typed associations, editions, and hierarchy as a projection — not the source of
+        truth.
+      </p>
+      <div class="adoc">
+        <p>
+          The project lives under the{" "}
+          <a href="https://github.com/connectome-fs">connectome-fs</a> GitHub organization so
+          systems work (drivers, adapters, file-manager plugins, demos) can accumulate without
+          crowding a developer-tools product catalog or a personal profile.
         </p>
         <p>
-          Core store and CLI are Rust today (kernel-adjacent path, FFI-friendly). D is the preferred
-          language for interactive tools and GUI-facing utilities via a C ABI. Docs are authored in
-          AsciiDoc and published with Antora; this marketing site is SolidStart (static).
+          Partner orgs keep complementary lanes: Dev-Centr for practitioner orchestration, HCI-Nerdz
+          for cognitive/UX implications, OpenShellOrg for shell query and projection standards.
         </p>
         <p>
-          <A href="/docs">Documentation</A>
-          {" · "}
-          <a href="https://github.com/AMDphreak/connectome-fs">Source</a>
+          Design surfaces follow <strong>Signal Field</strong> — see the blog note and{" "}
+          <code>DESIGN.md</code>.
         </p>
-      </section>
+      </div>
     </>
   );
 }

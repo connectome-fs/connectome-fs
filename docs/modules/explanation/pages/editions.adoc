@@ -86,8 +86,10 @@ context selects *which binding* a path resolves to.
 == Related
 
 * xref:vcs-collapse.adoc[VCS collapse over editions]
+* xref:semantic-change-units.adoc[Semantic change units]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:app-connection-offload.adoc[App connection offload]
-* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
 * link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
-* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]

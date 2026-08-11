@@ -1,0 +1,7 @@
+= 2026-08-09 — Org launch, Signal Field site, semantic change units
+
+* Ownership path: `AMDphreak` → brief `dev-centr` → **`connectome-fs` org**
+* New explanation: features/dependencies as graph identity vs Git file blobs; Unison; syntax-aware auto-forward
+* Marketing site: Signal Field design, theme fade + system sync, AsciiDoc CMS, roadmap, partner footer
+* Antora + Valentus + `supplemental-ui` brand; Pages workflow publishes site + `/docs/`
+* Cross-links: Dev-Centr practitioner essays; HCI forge ontology blog; DevCentr News commentary

@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "signal-field",
+    "title": "Signal Field",
+    "description": "The design philosophy for connectome-fs web surfaces — field before chrome, graph as atmosphere, AsciiDoc as CMS.",
+    "revdate": "2026-08-09",
+    "keywords": [
+      "blog",
+      "design",
+      "signal-field"
+    ],
+    "html": "<h1>Signal Field</h1>\n<div class=\"paragraph\">\n<p>Most project sites put the navigation bar in the first ten pixels and then apologize with a hero card.\nSignal Field inverts that: the first viewport is almost empty on purpose — brand patterning, a wordmark, one sentence — and the chrome waits underneath.</p>\n</div>\n<div class=\"paragraph\">\n<p>That is not minimalism for its own sake.\nA connectome is dense; the doorway should not be.</p>\n</div>\n<div class=\"paragraph\">\n<p>See <code>DESIGN.md</code> in the repository for tokens and rules.</p>\n</div>",
+    "kind": "blog"
+  },
+  {
+    "slug": "paths-are-labels-not-identity",
+    "title": "Paths are labels, not identity",
+    "description": "Why connectome-fs treats pretty paths as navigation — and how that matches the HCI Nerdz “navigating by content” stack for the web and DevX.",
+    "revdate": "2026-08-11",
+    "keywords": [
+      "blog",
+      "identity",
+      "content-addressing",
+      "hci-nerdz",
+      "navigating-by-content"
+    ],
+    "html": "<h1>Paths are labels, not identity</h1>\n<div id=\"preamble\">\n<div class=\"sectionbody\">\n<div class=\"paragraph\">\n<p>I do not want to memorize where a file lives.\nI want the <strong>thing</strong> — the feature, the doc, the asset — and I want renames to change the nameplate, not the wiring.</p>\n</div>\n<div class=\"paragraph\">\n<p>That is the connectome-fs bet: store associations as a graph; treat folder paths as a projection people can browse.\nIt is also the HCI Nerdz claim for the public web: canonical URLs are for human convenience, not for functional dependency.</p>\n</div>\n</div>\n</div>\n<div class=\"sect1\">\n<h2 id=\"_what_breaks_today\">What breaks today</h2>\n<div class=\"sectionbody\">\n<div class=\"paragraph\">\n<p>A docs URL gets pasted into another repo.\nSomeone improves the path.\nHalf the citations rot.\nDevelopers pay attention tax that should have been a pointer update — or never a string wire at all.</p>\n</div>\n<div class=\"paragraph\">\n<p>Package registries already track reverse dependents for code.\nProse never got the equivalent.\nConnectome-fs wants reverse edges in the store itself.</p>\n</div>\n</div>\n</div>\n<div class=\"sect1\">\n<h2 id=\"_the_stack_we_agree_on\">The stack we agree on</h2>\n<div class=\"sectionbody\">\n<div class=\"olist arabic\">\n<ol class=\"arabic\">\n<li>\n<p>*Content identity (hash / node id) for “same thing”: \\(Hash(Bytes_{old}) = Hash(Bytes_{new})\\) when only the path moves</p>\n</li>\n<li>\n<p><strong>Mutable human pointer</strong> for “current edition of this intent” after \\(Hash(Bytes_{v1}) \\neq Hash(Bytes_{v2})\\)</p>\n</li>\n<li>\n<p><strong>Reverse consumers</strong> for leftover labels on today&#8217;s web</p>\n</li>\n<li>\n<p><strong>Redirects</strong> while the classical web remains string-shaped</p>\n</li>\n</ol>\n</div>\n<div class=\"listingblock\">\n<div class=\"content\">\n<pre class=\"highlight\"><code class=\"language-mermaid\" data-lang=\"mermaid\">flowchart LR\n  Label[Pretty path] -.-&gt; Node[Node / hash]\n  Node --&gt; Edge[depends-on / cites]</code></pre>\n</div>\n</div>\n</div>\n</div>\n<div class=\"sect1\">\n<h2 id=\"_where_to_read_next\">Where to read next</h2>\n<div class=\"sectionbody\">\n<div class=\"ulist\">\n<ul>\n<li>\n<p><a href=\"https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/\">When renaming a page breaks half your docs</a> — gut check</p>\n</li>\n<li>\n<p><a href=\"https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/\">When the name is not the wire</a> — layers</p>\n</li>\n<li>\n<p><a href=\"https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html\">HCI Nerdz docs — Navigating by content</a></p>\n</li>\n<li>\n<p><a href=\"https://connectome-fs.github.io/connectome-fs/docs/\">connectome-fs docs hub</a> — open <strong>Navigating by content</strong></p>\n</li>\n<li>\n<p><a href=\"https://hci-nerdz.github.io/demos/navigating-by-content/\">Rename demo</a></p>\n</li>\n</ul>\n</div>\n</div>\n</div>",
+    "kind": "blog"
+  }
+]

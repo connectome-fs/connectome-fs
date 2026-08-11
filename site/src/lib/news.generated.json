@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "2026-08-09-semantic-change-units",
+    "title": "Features are not files",
+    "description": "Why Git feels hard when the unit of change is a path — and how connectome semantic units + syntax-aware auto-forward aim higher.",
+    "revdate": "2026-08-09",
+    "keywords": [
+      "news",
+      "git",
+      "semantic-units",
+      "unison"
+    ],
+    "html": "<h1>Features are not files</h1>\n<div class=\"paragraph\">\n<p>Git stores blobs and trees.\nDevelopers edit features, fixes, and dependency edges that cut across files — and sometimes share a file with unrelated neighbors.</p>\n</div>\n<div class=\"paragraph\">\n<p>We published the design essay <a href=\"../docs/connectome-fs/0.1/explanation/semantic-change-units.html\">Semantic change units</a> (Antora docs on this site) and a practitioner framing on Dev-Centr.</p>\n</div>\n<div class=\"imageblock\">\n<div class=\"content\">\n<img src=\"https://connectome-fs.github.io/connectome-fs/media/git-blobs-vs-graph-units.webp\" alt=\"Git file blobs versus feature graph\">\n</div>\n</div>",
+    "kind": "news"
+  },
+  {
+    "slug": "2026-08-09-org-launch",
+    "title": "connectome-fs becomes its own org",
+    "description": "The graph filesystem substrate moves under github.com/connectome-fs — Dev-Centr, HCI-Nerdz, and OpenShellOrg stay partner audiences, not owners of the VFS.",
+    "revdate": "2026-08-09",
+    "keywords": [
+      "news",
+      "org",
+      "github",
+      "substrate"
+    ],
+    "html": "<h1>connectome-fs becomes its own org</h1>\n<div class=\"paragraph\">\n<p>The implementation belongs with systems work: editions, GUID nodes, associations, and the adapters that will follow (file-manager plugins, projection layers, drivers).</p>\n</div>\n<div class=\"paragraph\">\n<p>Partner orgs keep their lanes:</p>\n</div>\n<div class=\"ulist\">\n<ul>\n<li>\n<p><strong>Dev-Centr</strong> — developer / git / agent-workspace practice</p>\n</li>\n<li>\n<p><strong>HCI-Nerdz</strong> — cognitive and surface implications</p>\n</li>\n<li>\n<p><strong>OpenShellOrg</strong> — shell query and hierarchical projection</p>\n</li>\n</ul>\n</div>\n<div class=\"paragraph\">\n<p>This site and the Antora docs are the canonical public face for the substrate itself.</p>\n</div>",
+    "kind": "news"
+  }
+]

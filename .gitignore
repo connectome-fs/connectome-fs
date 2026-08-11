@@ -3,6 +3,9 @@
 !.gitignore
 !LICENSE
 !README.md
+!DESIGN.md
+!brand/
+!brand/**
 !CHANGELOG.adoc
 !MEMORIES.md
 !Cargo.toml
@@ -17,6 +20,8 @@
 !changelog-details/**
 !site/
 !site/**
+!supplemental-ui/
+!supplemental-ui/**
 !antora-playbook.yml
 !.github/
 !.github/**
@@ -24,6 +29,9 @@
 !AI-LOCAL-LIBRARY-DOCS.local.json5
 
 # Still exclude build/cache artifacts under allowed trees
+node_modules/
+**/node_modules/
+package-lock.json
 target/
 **/target/
 *.db

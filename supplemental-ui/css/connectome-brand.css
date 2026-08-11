@@ -1,0 +1,23 @@
+/*
+ * connectome-fs brand overlay for valentus-theme 2.x (Signal Field tokens).
+ * Light signal: #0c6b6e · Dark signal: #3ec9c4 · Copper: #b86a3d / #e09a62
+ */
+
+:root {
+  --adt-accent: #0c6b6e;
+  --adt-accent-hover: #085456;
+  --adt-accent-soft: rgba(12, 107, 110, 0.12);
+}
+
+html.dark-theme {
+  --adt-accent: #3ec9c4;
+  --adt-accent-hover: #7adcd8;
+  --adt-accent-soft: rgba(62, 201, 196, 0.14);
+}
+
+/* Soft field wash behind the doc chrome — cool mineral, not cream. */
+body {
+  background:
+    radial-gradient(900px 420px at 0% 0%, color-mix(in oklab, var(--adt-accent) 10%, transparent), transparent 55%),
+    var(--adt-background, inherit);
+}

@@ -1,0 +1,31 @@
+= Roadmap
+:description: Near-term substrate milestones for connectome-fs — core, adapters, demos, and partner-facing surfaces.
+
+Where the substrate is going. Dates are intent, not contracts.
+
+== Now (foundation)
+
+* [x] GUID nodes, multi-names, associations, sharded search (v0 CLI)
+* [x] Editions / VCS-collapse design docs
+* [x] Semantic change units essay
+* [x] Org site + Antora docs (Valentus)
+
+== Next
+
+* [ ] Stable C ABI + first language wrapper (D)
+* [ ] Userspace projection: hierarchical views without stealing names
+* [ ] Edition context API sketch (process-scoped bindings)
+* [ ] File-manager demo: connectome-aware listing / dual citizenship
+
+== Later
+
+* [ ] WinFsp / FUSE mount path (or explicit non-goals if delayed)
+* [ ] Syntax-aware auto-forward prototype for identifier-level patches
+* [ ] Plugin kits for existing file managers (not forks-first)
+* [ ] Internet-enabled features (sync / publish associations) behind a real backend
+
+== Partner surfaces (not owned here)
+
+* Dev-Centr — agent workspace + git practice guides
+* HCI-Nerdz — editions UX and cognitive offload essays
+* OpenShellOrg — shell query / graph navigation standards

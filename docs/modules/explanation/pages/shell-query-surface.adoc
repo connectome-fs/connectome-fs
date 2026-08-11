@@ -50,5 +50,5 @@ Next:
 * xref:reference:query.adoc[Query grammar]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:editions.adoc[Editions]
-* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
-* link:https://openshellorg.github.io/shell-architecture/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
+* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://docs.opensh.org/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]

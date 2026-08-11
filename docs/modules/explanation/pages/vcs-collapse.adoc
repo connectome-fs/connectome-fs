@@ -61,8 +61,10 @@ understand language ASTs.
 == Related
 
 * xref:editions.adoc[Editions]
+* xref:semantic-change-units.adoc[Semantic change units]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:shell-query-surface.adoc[Shell query surface]
-* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
-* link:https://dev-centr.github.io/general-knowledge/general-knowledge/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]
-* link:https://openshellorg.github.io/shell-architecture/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]
+* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]

@@ -8,16 +8,15 @@ SolidStart is an **app framework**. They do not share a runtime component model.
 
 What *does* make sense is **concurrent use**:
 
-* SolidStart owns marketing, news, theme, docs onboarding (`/docs`), and navigation chrome.
-* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle) at `/manual/`.
-* CI builds Antora into `site/public/manual/` so GitHub Pages serves both from one deploy.
+* SolidStart owns marketing, news, theme, and navigation chrome.
+* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle) at `/docs/`.
+* CI builds Antora into `site/public/docs/` so GitHub Pages serves both from one deploy.
 * AsciiDoc sources stay in-repo (`docs/`) as the single authoring source.
 
 [source]
 ----
-/                 ← SolidStart (home, news, about)
-/docs             ← SolidStart onboarding gate → CTA into Antora
-/manual/**        ← Antora static output (copied into public/manual)
+/                 ← SolidStart (home, news, blog, roadmap, about)
+/docs/**          ← Antora static output (copied into public/docs)
 ----
 
 == Live updates

@@ -1,0 +1,70 @@
+= Navigating by content
+:navtitle: Navigating by content
+:description: Pretty path labels vs content identity — how connectome-fs relates to CAS, mutable pointers, reverse consumers, and the HCI Nerdz proposal.
+:toc:
+
+image::navigating-by-content/icon.svg[Hash core with detachable path label,width=96]
+
+Connectome-fs exists because *path strings are a bad identity*.
+Hierarchy is a navigation slice people understand.
+The graph — nodes, typed associations, editions — is where meaning and dependency should live.
+
+HCI Nerdz names the same mistake for the public web and multi-repo DevX as *navigating by content*:
+canonical URLs are for human convenience; they must not be the only functional wire.
+
+== The shared claim
+
+[cols="1,2"]
+|===
+| Surface | Mistake
+
+| Today's web / docs
+| Baking `https://…/old-path` into sibling READMEs so a rename becomes archaeology
+
+| File-tree VCS
+| Treating a path as the feature, so unrelated hunks collide and renames look like delete+add
+
+| Connectome model
+| Fixing that by addressing *nodes* (GUID / content / semantic units) and edges, with paths as projections
+|===
+
+[mermaid]
+----
+flowchart LR
+  Label[Pretty path / URL]
+  Node[Node id / content hash]
+  Edge[depends-on / cites / implements]
+  Label -.->|projection / pointer| Node
+  Node --> Edge
+----
+
+== Stack (with HCI Nerdz)
+
+. *Content-addressed identity* — same bytes (or same semantic unit) keep a stable id when the label moves: stem:[Hash(Bytes_{old}) = Hash(Bytes_{new})]
+. *Mutable pointer* — human name resolves to the current edition / hash when content updates (stem:[Hash(Bytes_{v1}) \neq Hash(Bytes_{v2})])
+. *Reverse consumers* — who still holds a label (`CONSUMERS.md` today; graph reverse edges tomorrow)
+. *Absorb layer* — redirects and aliases on the classical web
+
+Full analysis, Mermaid stack diagrams, and the `CONSUMERS.md` shape:
+link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz — Navigating by content].
+
+Paired essays:
+
+* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] (relatable)
+* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] (technical)
+
+Interactive mock:
+link:https://hci-nerdz.github.io/demos/navigating-by-content/[Rename simulation].
+
+== Where NDN fits (and does not)
+
+Named Data Networking improves *delivery*: fetch by name without host IP coupling.
+It does not manage the semantic life cycle of application labels.
+Connectome-fs and the HCI Nerdz proposal stay on the application / association plane — complementary in UX, orthogonal in layering.
+See also xref:semantic-change-units.adoc[Semantic change units] (Unison, feature nodes, auto-forward).
+
+== Near-term for this repo
+
+* Prefer node ids and typed edges in the model; treat vendor paths as compatibility projections (xref:compatibility-projection.adoc[Compatibility projection])
+* When publishing docs URLs that other projects will cite, maintain reverse consumers or hub `xref:` links
+* Keep human paths readable; stop pretending they are the only cite target

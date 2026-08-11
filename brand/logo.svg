@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="connectome-fs">
+  <title>connectome-fs</title>
+  <defs>
+    <linearGradient id="field" x1="28" y1="24" x2="228" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a1524"/>
+      <stop offset="100%" stop-color="#120c14"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="url(#field)"/>
+  <!-- Neuronal brain geometry (shared with logo-mark.svg). Pink-dominant. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#f078a8" stroke-width="3.7"
+      d="M24.8 157.5 L47.7 99.1 L78.1 50.8 L123.9 25.4 L167.1 40.7 L200.1 25.4 L228 58.5 L230.6 106.7 L210.2 147.4 L225.5 182.9 L197.5 216 L149.3 231.2 L106.1 223.6 L62.9 205.8 L32.4 172.8 L24.8 157.5"/>
+    <path stroke="#3ec9c4" stroke-width="3"
+      d="M78.1 50.8 L111.2 81.3 L144.2 66.1 L177.2 88.9 L200.1 124.5 L174.7 157.5 L141.7 142.3 L108.6 167.7 L75.6 139.7 L93.4 106.7 L78.1 50.8"/>
+    <path stroke="#f078a8" stroke-width="2.6"
+      d="M123.9 25.4 L141.7 142.3 M167.1 40.7 L174.7 157.5 M47.7 99.1 L75.6 139.7 M210.2 147.4 L174.7 157.5 M106.1 223.6 L108.6 167.7"/>
+    <path stroke="#3ec9c4" stroke-width="2.3"
+      d="M200.1 25.4 L177.2 88.9 M228 58.5 L200.1 124.5 M197.5 216 L174.7 157.5 M62.9 205.8 L75.6 139.7"/>
+  </g>
+  <g>
+    <circle cx="47.7" cy="99.1" r="9.5" fill="#f078a8"/>
+    <circle cx="78.1" cy="50.8" r="10.2" fill="#f078a8"/>
+    <circle cx="123.9" cy="25.4" r="11.4" fill="#f078a8"/>
+    <circle cx="167.1" cy="40.7" r="9.5" fill="#3ec9c4"/>
+    <circle cx="200.1" cy="25.4" r="8.9" fill="#f078a8"/>
+    <circle cx="228" cy="58.5" r="9.5" fill="#f078a8"/>
+    <circle cx="230.6" cy="106.7" r="8.9" fill="#3ec9c4"/>
+    <circle cx="210.2" cy="147.4" r="9.5" fill="#f078a8"/>
+    <circle cx="225.5" cy="182.9" r="8.3" fill="#f078a8"/>
+    <circle cx="197.5" cy="216" r="9.5" fill="#3ec9c4"/>
+    <circle cx="149.3" cy="231.2" r="10.8" fill="#f078a8"/>
+    <circle cx="106.1" cy="223.6" r="8.9" fill="#f078a8"/>
+    <circle cx="62.9" cy="205.8" r="8.9" fill="#3ec9c4"/>
+    <circle cx="32.4" cy="172.8" r="8.9" fill="#f078a8"/>
+    <circle cx="24.8" cy="157.5" r="8.3" fill="#f078a8"/>
+    <circle cx="111.2" cy="81.3" r="8.3" fill="#f078a8"/>
+    <circle cx="144.2" cy="66.1" r="7.6" fill="#3ec9c4"/>
+    <circle cx="177.2" cy="88.9" r="8.3" fill="#f078a8"/>
+    <circle cx="200.1" cy="124.5" r="7.6" fill="#3ec9c4"/>
+    <circle cx="174.7" cy="157.5" r="10.2" fill="#f078a8"/>
+    <circle cx="141.7" cy="142.3" r="7.6" fill="#3ec9c4"/>
+    <circle cx="108.6" cy="167.7" r="8.3" fill="#f078a8"/>
+    <circle cx="75.6" cy="139.7" r="8.9" fill="#3ec9c4"/>
+    <circle cx="93.4" cy="106.7" r="7.6" fill="#f078a8"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+= Features are not files
+:description: Why Git feels hard when the unit of change is a path — and how connectome semantic units + syntax-aware auto-forward aim higher.
+:revdate: 2026-08-09
+:keywords: news, git, semantic-units, unison
+
+Git stores blobs and trees.
+Developers edit features, fixes, and dependency edges that cut across files — and sometimes share a file with unrelated neighbors.
+
+We published the design essay link:../docs/connectome-fs/0.1/explanation/semantic-change-units.html[Semantic change units] (Antora docs on this site) and a practitioner framing on Dev-Centr.
+
+image::https://connectome-fs.github.io/connectome-fs/media/git-blobs-vs-graph-units.webp[Git file blobs versus feature graph]

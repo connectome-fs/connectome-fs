@@ -1,7 +1,15 @@
 site:
   title: connectome-fs Docs
   start_page: connectome-fs::index.adoc
-  url: https://amdphreak.github.io/connectome-fs/manual
+  url: https://connectome-fs.github.io/connectome-fs/docs
+  keys:
+    header_logo: logo.svg
+    site_home_url: https://connectome-fs.github.io/connectome-fs/
+    site_home_label: connectome-fs home
+    header_doc_title: connectome-fs Docs
+antora:
+  extensions:
+    - "@antora/lunr-extension"
 content:
   sources:
     - url: .
@@ -10,7 +18,11 @@ content:
       worktrees: true
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: https://github.com/antora-supplemental/valentus-theme/releases/download/v2/ui-bundle.zip
     snapshot: true
+  supplemental_files: ./supplemental-ui
+asciidoc:
+  attributes:
+    stem: latexmath
 output:
-  dir: site/public/manual
+  dir: site/public/docs

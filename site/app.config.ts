@@ -7,8 +7,8 @@ export default defineConfig({
     preset: "static",
     baseURL: base,
     prerender: {
-      crawlLinks: false,
-      routes: ["/", "/news", "/about", "/docs"],
+      crawlLinks: true,
+      routes: ["/", "/news", "/blog", "/about", "/roadmap"],
     },
   },
   vite: {

@@ -1,44 +1,54 @@
 import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
-import { newsItems } from "~/lib/news";
+import news from "~/lib/news.generated.json";
+
+type Post = {
+  slug: string;
+  title: string;
+  description: string;
+  revdate: string;
+};
 
 export default function Home() {
-  const latest = newsItems.slice(0, 2);
+  const latest = (news as Post[]).slice(0, 3);
 
   return (
     <>
       <Title>connectome-fs</Title>
-      <section class="hero">
-        <h1>connectome-fs</h1>
-        <p>
-          A GUID-addressed filesystem connectome: multi-name tokens, hierarchy as an entry view,
-          typed associations, and sharded search — with a Rust core and room for D tooling on top.
-        </p>
-        <div class="cta-row">
-          <A class="btn btn-primary" href="/docs">
-            Read the docs
-          </A>
-          <a class="btn btn-ghost" href="https://github.com/AMDphreak/connectome-fs">
-            View on GitHub
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Latest</h2>
-        <p class="lead">Project news and milestones.</p>
+      <section class="section" style={{ "border-top": "none", "padding-top": "0.25rem" }}>
+        <h2>Latest signal</h2>
+        <p class="lead">News built from AsciiDoc under <code>site/content/news/</code>.</p>
         <ul class="news-list">
           <For each={latest}>
             {(item) => (
               <li>
-                <time datetime={item.date}>{item.date}</time>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
+                <time datetime={item.revdate}>{item.revdate}</time>
+                <h3>
+                  <A href={`/news/${item.slug}`}>{item.title}</A>
+                </h3>
+                <p>{item.description}</p>
               </li>
             )}
           </For>
         </ul>
+      </section>
+
+      <section class="section">
+        <h2>Why a substrate org</h2>
+        <p class="lead">
+          File-manager plugins, projection layers, drivers, and demos will outgrow any single
+          product catalog. Partner orgs keep practitioner, HCI, and shell lanes; this org owns the
+          graph filesystem itself.
+        </p>
+        <div class="cta-row" style={{ display: "flex", gap: "0.75rem", "flex-wrap": "wrap" }}>
+          <A class="btn btn-primary" href="/roadmap">
+            See the roadmap
+          </A>
+          <A class="btn btn-ghost" href="/blog">
+            Design notes
+          </A>
+        </div>
       </section>
     </>
   );

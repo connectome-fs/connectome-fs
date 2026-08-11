@@ -1,0 +1,12 @@
+= Signal Field
+:description: The design philosophy for connectome-fs web surfaces — field before chrome, graph as atmosphere, AsciiDoc as CMS.
+:revdate: 2026-08-09
+:keywords: blog, design, signal-field
+
+Most project sites put the navigation bar in the first ten pixels and then apologize with a hero card.
+Signal Field inverts that: the first viewport is almost empty on purpose — brand patterning, a wordmark, one sentence — and the chrome waits underneath.
+
+That is not minimalism for its own sake.
+A connectome is dense; the doorway should not be.
+
+See `DESIGN.md` in the repository for tokens and rules.

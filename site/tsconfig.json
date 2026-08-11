@@ -9,6 +9,7 @@
     "jsxImportSource": "solid-js",
     "allowJs": true,
     "strict": true,
+    "resolveJsonModule": true,
     "noEmit": true,
     "types": ["vinxi/types/client"],
     "isolatedModules": true,
