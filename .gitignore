@@ -7,7 +7,7 @@
 !brand/
 !brand/**
 !CHANGELOG.adoc
-!MEMORIES.md
+!AGENTS.md
 !Cargo.toml
 !Cargo.lock
 !crates/
