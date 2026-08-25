@@ -86,11 +86,11 @@ Together they explain why modern Git UX keeps inventing escape hatches—and why
 
 == Related
 
-* xref:navigating-by-content.adoc[Navigating by content]
+* xref:navigating-by-content.adoc[Labels versus wires]
 * xref:model.adoc[Connectome model]
 * xref:editions.adoc[Editions]
 * xref:vcs-collapse.adoc[VCS collapse over editions]
-* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz: Navigating by content]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz: Labels versus wires]
 * link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
 * link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
 * link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]

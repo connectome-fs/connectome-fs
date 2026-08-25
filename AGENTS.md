@@ -18,4 +18,5 @@ Project facts for agents. Workstation/env facts live only in `$CODE_ROOT/MEMORIE
 
 ## Related HCI claim
 
-- Path strings are navigation, not identity — docs `explanation/navigating-by-content.adoc`; HCI Nerdz *Navigating by content*
+- Path strings are navigation, not identity — docs `explanation/navigating-by-content.adoc` (*Labels versus wires*); HCI Nerdz symptom ↔ diagnosis/treatment pair; **substrate** for content-addressed / wire identity; systems umbrella Internet Reliability @ DevCentr
+- Antora UI: Valentus `v2` (lean). Recommended stack pack when composing hubs: **Facto** (`antora-supplemental/antora-facto`) — do not fold extras into Valentus core.

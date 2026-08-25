@@ -1,6 +1,6 @@
-= Navigating by content
-:navtitle: Navigating by content
-:description: Pretty path labels vs content identity — how connectome-fs relates to CAS, mutable pointers, reverse consumers, and the HCI Nerdz proposal.
+= Labels versus wires
+:navtitle: Labels versus wires
+:description: Pretty path labels vs content identity — how connectome-fs relates to CAS, mutable pointers, reverse consumers, and the HCI Nerdz diagnosis/treatment face.
 :toc:
 
 image::navigating-by-content/icon.svg[Hash core with detachable path label,width=96]
@@ -9,8 +9,9 @@ Connectome-fs exists because *path strings are a bad identity*.
 Hierarchy is a navigation slice people understand.
 The graph — nodes, typed associations, editions — is where meaning and dependency should live.
 
-HCI Nerdz names the same mistake for the public web and multi-repo DevX as *navigating by content*:
+HCI Nerdz names the same mistake for the public web and multi-repo DevX as *Labels versus wires*:
 canonical URLs are for human convenience; they must not be the only functional wire.
+People feel the *symptom* (rename/URL rot) first; this page sits with the diagnosis/treatment face.
 
 == The shared claim
 
@@ -46,15 +47,16 @@ flowchart LR
 . *Absorb layer* — redirects and aliases on the classical web
 
 Full analysis, Mermaid stack diagrams, and the `CONSUMERS.md` shape:
-link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz — Navigating by content].
+link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz — Labels versus wires] (slug kept).
 
-Paired essays:
+Systems-altitude umbrella (orient altitudes; deep-link here for treatment detail):
+link:https://docs.devcentr.org/general-knowledge/explanation/internet-architecture/reliability/index.html[Internet Reliability @ DevCentr].
 
-* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] (relatable)
-* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] (technical)
+Paired faces:
 
-Interactive mock:
-link:https://hci-nerdz.github.io/demos/navigating-by-content/[Rename simulation].
+* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] (symptom)
+* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] (diagnosis)
+* link:https://hci-nerdz.github.io/demos/navigating-by-content/[Rename simulation] (symptom demo)
 
 == Where NDN fits (and does not)
 

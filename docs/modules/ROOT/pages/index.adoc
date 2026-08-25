@@ -9,7 +9,7 @@ The marketing / news site (SolidStart) links here under `/docs/`.
 * xref:tutorials:vendor-names.adoc[Tutorial: vendor download names]
 * xref:explanation:model.adoc[Connectome model]
 * xref:explanation:semantic-change-units.adoc[Semantic change units]
-* xref:explanation:navigating-by-content.adoc[Navigating by content]
+* xref:explanation:navigating-by-content.adoc[Labels versus wires]
 * xref:explanation:editions.adoc[Editions]
 * xref:explanation:bindings.adoc[Language bindings]
 * xref:reference:query.adoc[Query grammar]

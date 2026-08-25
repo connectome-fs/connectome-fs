@@ -1,13 +1,14 @@
 = Paths are labels, not identity
-:description: Why connectome-fs treats pretty paths as navigation — and how that matches the HCI Nerdz “navigating by content” stack for the web and DevX.
+:description: Why connectome-fs treats pretty paths as navigation — and how that matches the HCI Nerdz Labels versus wires stack for the web and DevX.
 :revdate: 2026-08-11
-:keywords: blog, identity, content-addressing, hci-nerdz, navigating-by-content
+:keywords: blog, identity, content-addressing, hci-nerdz, labels-versus-wires
 
 I do not want to memorize where a file lives.
 I want the *thing* — the feature, the doc, the asset — and I want renames to change the nameplate, not the wiring.
 
 That is the connectome-fs bet: store associations as a graph; treat folder paths as a projection people can browse.
 It is also the HCI Nerdz claim for the public web: canonical URLs are for human convenience, not for functional dependency.
+People feel rename and URL rot first; the diagnosis is labels used as wires.
 
 == What breaks today
 
@@ -36,8 +37,8 @@ flowchart LR
 
 == Where to read next
 
-* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] — gut check
-* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] — layers
-* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz docs — Navigating by content]
-* link:https://connectome-fs.github.io/connectome-fs/docs/[connectome-fs docs hub] — open *Navigating by content*
-* link:https://hci-nerdz.github.io/demos/navigating-by-content/[Rename demo]
+* link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] — symptom
+* link:https://hci-nerdz.github.io/blog/when-the-name-is-not-the-wire/[When the name is not the wire] — diagnosis
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI Nerdz docs — Labels versus wires]
+* link:https://connectome-fs.github.io/connectome-fs/docs/[connectome-fs docs hub] — open *Labels versus wires*
+* link:https://hci-nerdz.github.io/demos/navigating-by-content/[Symptom demo]

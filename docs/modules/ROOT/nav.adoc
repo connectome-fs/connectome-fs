@@ -9,7 +9,7 @@
 ** xref:explanation:editions.adoc[Editions]
 ** xref:explanation:vcs-collapse.adoc[VCS collapse over editions]
 ** xref:explanation:semantic-change-units.adoc[Semantic change units]
-** xref:explanation:navigating-by-content.adoc[Navigating by content]
+** xref:explanation:navigating-by-content.adoc[Labels versus wires]
 ** xref:explanation:compatibility-projection.adoc[Compatibility projection]
 ** xref:explanation:app-connection-offload.adoc[App connection offload]
 ** xref:explanation:shell-query-surface.adoc[Shell query surface]
