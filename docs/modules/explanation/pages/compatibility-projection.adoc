@@ -56,6 +56,12 @@ layer may expose *one* hierarchical walk at a time—chosen by context
 bar, query, or session—without duplicating bytes or forcing every
 hierarchy into one polluted tree of sibling version folders.
 
+== Motivating failure: dual PATH installs
+
+When two products ship the same CLI (example: system Chocolatey vs a copy bundled under UniGetUI’s AppData tree), Windows `PATH` order silently picks a winner. The bundler may validate “its” install while the user’s shell invokes the other. Prepend-vs-append installer policy does not fix dual ownership.
+
+That pain is exactly why connectome refuses `appname/version/file` trees as the default address space and prefers **edition context** on a stable path (see above). Any future “path flattening” or projection work should absorb this collision story—not resurrect sibling version folders as the UX.
+
 == Related
 
 * xref:editions.adoc[Editions]

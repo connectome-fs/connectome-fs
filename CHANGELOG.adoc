@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-29 — Dual PATH install motivation
+
+* Compatibility projection docs add a UniGetUI/Chocolatey-style dual-`PATH` motivating example; edition context remains the preferred fix over `app/version/file` trees
+
 == 2026-08-25 — Internet Reliability umbrella
 
 * Explanation links DevCentr Internet Reliability as systems-altitude umbrella; HCI symptom ↔ diagnosis pairing unchanged
