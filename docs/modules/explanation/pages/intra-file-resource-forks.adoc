@@ -1,0 +1,99 @@
+= Intra-file resource forks
+:description: Standardized routing inside a single file — data fork vs schema fork without loading the whole blob.
+:navtitle: Intra-file forks
+
+Connectome-fs treats **identity as graph** and **paths as labels**. Intra-file forks extend that idea downward: a file is not only a blob on disk, but a **small addressable interior** with typed streams — without forcing every reader to load the entire byte span into memory.
+
+== Problem
+
+Real projects accumulate intimate neighbors:
+
+* `app.toml` + `app.schema.json`
+* `.gitconfig` + documentation the UI never sees
+* Sidecars that version together but diff separately
+
+Externalizing everything into the connectome graph works (related-to edges between GUIDs), but it can **pollute graph space** with pairs that are really one logical artifact split for historical syntax reasons.
+
+== Fork model (conceptual)
+
+A *compound file* exposes a predictable router:
+
+[source,text]
+----
+/myapp/settings.toml
+  /data          → volatile instance (what tools read/write today)
+  /schema        → nonvolatile vocabulary (JSON Schema, SDL catalog fragment, …)
+  /meta          → publisher, format id, repository URL (optional)
+----
+
+Readers that only edit values traverse `/data`. Settings UIs traverse `/schema` first, then overlay `/data` — the same *schema − instance* split UniConfig uses, but **co-located** instead of sidecar files littering the tree.
+
+This mirrors classic resource-fork thinking (Mac), ZIP central directory, PDF object streams, and ELF sections — unified by a **standard route table**, not ad hoc "convention plus hope."
+
+== Lazy I/O requirement
+
+Forks only help when APIs can:
+
+. Parse the route index (footer, header, or connectome manifest block)
+. `seek` + bounded read one fork
+. Never mmap the full multi-megabyte span for a one-kilobyte schema
+
+Blind `read_entire_file()` defeats the model. Connectome adapters and future codec plugins should expose `open_fork(path, route)` as a first-class operation.
+
+== Connectome-fs integration (every level)
+
+[cols="1,2"]
+|===
+| *Graph layer* | A File node may advertise `intra-file-routes` metadata; associations link fork identities without spawning sibling File nodes for every sidecar.
+| *Edition layer* | Fork bindings can differ per edition (schema stable, data forked) — see xref:editions.adoc[Editions].
+| *Semantic change units* | A change unit may target `/schema` only (vocabulary bump) vs `/data` (user value edit) — see xref:semantic-change-units.adoc[Semantic change units].
+| *Compatibility projection* | Legacy tools that only understand flat files receive a **projected data fork**; schema fork stays invisible until the reader upgrades — see xref:compatibility-projection.adoc[Compatibility projection].
+| *Shell / bindings* | `cfs` and language bindings gain route-aware read/write; D/Rust wrappers for UniConfig codecs consume the same router.
+|===
+
+External sidecars remain valid — the graph can still wire `settings.toml` → `settings.schema.json` — but **preferred** packaging for new formats is one GUID, multiple interior routes.
+
+== Relationship to UniConfig / ConfigUI
+
+UniConfig today resolves vocabulary via:
+
+* Registered app catalogs (`catalog-index.sdl`)
+* Sidecar `*.schema.json` / `$schema` pointers
+* On-the-fly inference
+
+Intra-file `/schema` forks become another resolver step **before** sidecar lookup:
+
+[source,text]
+----
+open_document(path)
+  → intra-file router: schema fork present?
+  → else registered catalog glob match
+  → else external sidecar
+  → else infer
+----
+
+ConfigUI's document banner (format spec, codec link, publisher repository) maps naturally onto `/meta`.
+
+Partner doc: DevCentr xref:uniconfig:architecture.adoc[UniConfig architecture] (docs.devcentr.org).
+
+== Standardization stance
+
+Routing must be **predictable across formats** — not per-app magic bytes. Candidates to converge in a connectome-fs spec:
+
+* SDLang-native compound documents (schema block + instance block)
+* TOML / JSON envelope with registered `@connectome/forks` table
+* Optional binary envelope (length-prefixed sections) for tools that outgrow text
+
+Disruptive? Yes — existing editors must adopt routers or keep using projected flat exports. The payoff is fewer orphaned sidecars and cleaner human-facing trees.
+
+== Non-goals (v0)
+
+* Replacing every legacy format in place (Git config stays INI-shaped at the wire)
+* Mandatory fork support in all adapters on day one — projection + sidecars remain
+
+== Related
+
+* xref:model.adoc[Connectome model]
+* xref:semantic-change-units.adoc[Semantic change units]
+* xref:compatibility-projection.adoc[Compatibility projection]
+* xref:app-connection-offload.adoc[App connection offload]

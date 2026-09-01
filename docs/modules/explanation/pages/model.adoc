@@ -56,6 +56,11 @@ xref:app-connection-offload.adoc[App connection offload]. Shells that
 outgrow cwd-only navigation: xref:shell-query-surface.adoc[Shell query
 surface].
 
+Intra-file *resource forks* (`/data`, `/schema`, `/meta`) keep intimate
+sidecars inside one GUID-addressed file — see
+xref:intra-file-resource-forks.adoc[Intra-file resource forks]. Partner:
+UniConfig / ConfigUI vocabulary resolution on DevCentr docs.
+
 == Source ODTs
 
 See `docs/gdrive-odt/` for exported originals and

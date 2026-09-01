@@ -11,6 +11,7 @@
 ** xref:explanation:semantic-change-units.adoc[Semantic change units]
 ** xref:explanation:navigating-by-content.adoc[Labels versus wires]
 ** xref:explanation:compatibility-projection.adoc[Compatibility projection]
+** xref:explanation:intra-file-resource-forks.adoc[Intra-file resource forks]
 ** xref:explanation:app-connection-offload.adoc[App connection offload]
 ** xref:explanation:shell-query-surface.adoc[Shell query surface]
 ** xref:explanation:bindings.adoc[Bindings & access targets]

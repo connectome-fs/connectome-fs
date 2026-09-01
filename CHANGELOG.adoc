@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-09-01 — Intra-file resource forks
+
+* Explanation: standardized `/data`, `/schema`, `/meta` routes inside compound files; lazy fork I/O; integration with editions, semantic change units, compatibility projection, and UniConfig resolver ladder
+* Connectome model cross-link
+
 == 2026-08-29 — Dual PATH install motivation
 
 * Compatibility projection docs add a UniGetUI/Chocolatey-style dual-`PATH` motivating example; edition context remains the preferred fix over `app/version/file` trees
