@@ -28,8 +28,8 @@ jobs:
         with:
           version: 9
 
-      - name: Install Antora + Lunr
-        run: npm install --no-save @antora/cli @antora/site-generator @antora/lunr-extension
+      - name: Install Antora + Lunr + build-stack
+        run: npm install --no-save @antora/cli @antora/site-generator @antora/lunr-extension github:antora-supplemental/build-stack#main
 
       - name: Build Antora docs into site/public/docs
         run: npx antora antora-playbook.yml
