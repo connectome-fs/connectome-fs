@@ -52,6 +52,11 @@ link:https://hci-nerdz.github.io/docs/hci-nerdz/navigating-by-content.html[HCI N
 Systems-altitude umbrella (orient altitudes; deep-link here for treatment detail):
 link:https://docs.devcentr.org/general-knowledge/explanation/internet-architecture/reliability/index.html[Internet Reliability @ DevCentr].
 
+Correspondence and media that only the host can search (*host-held history*) belong in the same portability story:
+link:https://docs.devcentr.org/general-knowledge/explanation/internet-architecture/provider-search-and-mirror-backups.html[Provider search and mirror backups] ·
+link:https://hci-nerdz.github.io/docs/hci-nerdz/host-held-history.html[HCI — Host-held history].
+Substrate note: attachment bytes and issue bodies should remain addressable as content nodes, not only as forge CDN URLs.
+
 Paired faces:
 
 * link:https://hci-nerdz.github.io/blog/when-renaming-a-page-breaks-half-your-docs/[When renaming a page breaks half your docs] (symptom)

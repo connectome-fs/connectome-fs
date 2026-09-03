@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-02 — Host-held history cross-link
+
+* Labels versus wires explanation: link Provider search and mirror backups + HCI Host-held history; attachment bytes as content nodes vs forge CDN URLs only.
+
 == 2026-09-01 — Intra-file resource forks
 
 * Explanation: standardized `/data`, `/schema`, `/meta` routes inside compound files; lazy fork I/O; integration with editions, semantic change units, compatibility projection, and UniConfig resolver ladder
