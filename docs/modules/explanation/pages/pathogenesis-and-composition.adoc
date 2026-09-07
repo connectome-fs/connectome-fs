@@ -1,0 +1,141 @@
+= Pathogenesis and composition
+:navtitle: Pathogenesis and composition
+:description: Evolutionary and compositional lenses over a codebase — teaching walks and aspect graphs that sit on GUID identity, not path-shaped git archaeology.
+:toc:
+
+After many human and AI iterations, the *current* tree often no longer teaches what the system *is*.
+Git history is a weak substitute: squash, rewrite, and one-shot generation erase the naive entrypoint that would have made the lessons visible.
+Verbal onboarding stories help less than *seeing* a simple structure grow through refactors.
+
+Connectome-fs treats that gap as two *projections* over one identity graph — not as new URL schemes.
+
+== Two lenses
+
+[cols="1,2,2"]
+|===
+| Lens | Question | Shape
+
+| *Evolutionary (pathogenesis)*
+| How do I learn this by watching it grow?
+| Ordered walk: naive snapshot → lesson → refactor → … → today's tree
+
+| *Compositional*
+| What aspects make up the finished system?
+| Graph of aspects and linkages (independent of discovery order)
+|===
+
+Evolution is path-dependent storytelling.
+Composition is systematic decomposition.
+The same nodes appear in both; the walks differ.
+
+Real commit history rarely equals a good teaching path — especially after an AI one-shot.
+An evolutionary walk may be *authored or reconstructed*, while still pointing at real content hashes (git OID / CID) when those bytes exist.
+
+== Why git history is not pedagogy
+
+Git models blobs in trees and commits over those trees.
+It does not model *lessons*, *aspects*, or “start here when you are new.”
+
+Examples of the failure mode:
+
+* The first meaningful commit is already a finished design (common with AI-assisted scaffolds).
+* Mid-refactor broken states were never committed, or were force-cleaned before push.
+* A module was split across files and repos; path archaeology cannot tell you which lesson caused the split.
+
+Semantic change units fix *feature identity* for sync and merge
+(xref:semantic-change-units.adoc[Semantic change units]).
+Pathogenesis and composition fix *onboarding identity*: how a stranger relates to the finished graph.
+
+== Identity stack (no new protocols)
+
+Addressing stays path-decoupled.
+Teaching metadata is association *types*, not schemes like invented pedagogy URLs.
+
+[cols="1,2"]
+|===
+| Layer | Role
+
+| Path / display name
+| Human navigation slice (fragile)
+
+| MUID
+| Machine-local stable id before publish
+
+| GUID
+| Authoritative mutable lineage (IPNS-class pointer when promoted)
+
+| Content OID / CID
+| Immutable snapshot of bytes for a step
+|===
+
+Git remains a *sync and review* adapter.
+It does not have to own the teaching graph.
+When a file is refactored into another repository, record an `extracted-to` (or equivalent) edge between GUID nodes instead of a comment that will rot when the URL changes.
+
+[mermaid]
+----
+flowchart LR
+  subgraph identity [Identity]
+    Node[GUID_or_MUID]
+    Snap[Content_OID]
+    Node -->|tip_or_edition| Snap
+  end
+  subgraph lenses [Lenses]
+    Evo[Evolutionary_walk]
+    Comp[Composition_graph]
+  end
+  Evo -->|ordered_steps| Node
+  Comp -->|aspect_edges| Node
+  Git[Git_remote_sync] -.->|optional_anchor| Snap
+----
+
+=== Content addressing vs hot commit cadence
+
+IPFS-style content IDs are excellent *fingerprints* for immutable step payloads.
+They are a poor sole namespace for a hot working tree: every edit cascades directory CIDs, and mutable name systems that republish a root on every save fight rapid AI commit cadence.
+
+Reuse the *ideas* — content hash for snapshots, mutable lineage pointer for “this node's tip” — without requiring DHT republish on every save.
+Local MUID/GUID assignment and git OID anchors are enough for a userspace pilot.
+
+== Sidecar today, connectome native later
+
+Until editions and associations live in the VFS, projects can check in a *userspace sidecar* beside source:
+
+* `pathogenesis/manifest` — walk id, title, ordered step list
+* `pathogenesis/steps/<n>-<slug>/` — lesson notes + synthetic tree or patch
+* `composition/aspects` — aspect nodes with edges into steps and/or current source anchors
+
+Association vocabulary (illustrative): `evolves-from`, `lesson-of`, `aspect-of`, `extracted-to`, `anchors`.
+Distinguish teaching reconstruction from literal history with metadata on the walk or step (`role: pedagogical` vs provenance anchors to real commits) — still ordinary fields, not special URL schemes.
+
+Pilot (reconstructed walk for a thread-local GC):
+link:https://github.com/dlang-supplemental/tgc/tree/main/pathogenesis[dlang-supplemental/tgc pathogenesis].
+
+=== Snapshot tags
+
+Record both useful and broken checkpoints; filter later:
+
+* `build`: `ok` | `fail` | `unknown` — AI workflows can prefer `ok`
+* `role`: `working` | `broken-intentional` | `pedagogical` — humans need mid-refactor honesty
+
+Authors and agents write steps explicitly in v0.
+Compiler-triggered snapshots are optional automation later.
+
+== Non-goals (this round)
+
+* Private overlay networks or “our own internet” to replace DNS
+* Kernel / minifilter identity assignment
+* Auto-publish of dependency graphs (secret leakage risk)
+* Replacing git remotes wholesale
+
+Those sit on the longer connectome-fs roadmap (publish associations, mounts, internet-backed features).
+
+== Related
+
+* xref:semantic-change-units.adoc[Semantic change units]
+* xref:model.adoc[Connectome model]
+* xref:navigating-by-content.adoc[Labels versus wires]
+* xref:editions.adoc[Editions]
+* xref:vcs-collapse.adoc[VCS collapse over editions]
+* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
+* link:https://github.com/dlang-supplemental/tgc[dlang-supplemental/tgc]

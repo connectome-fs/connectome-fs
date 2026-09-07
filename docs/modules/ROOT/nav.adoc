@@ -9,6 +9,7 @@
 ** xref:explanation:editions.adoc[Editions]
 ** xref:explanation:vcs-collapse.adoc[VCS collapse over editions]
 ** xref:explanation:semantic-change-units.adoc[Semantic change units]
+** xref:explanation:pathogenesis-and-composition.adoc[Pathogenesis and composition]
 ** xref:explanation:navigating-by-content.adoc[Labels versus wires]
 ** xref:explanation:compatibility-projection.adoc[Compatibility projection]
 ** xref:explanation:intra-file-resource-forks.adoc[Intra-file resource forks]

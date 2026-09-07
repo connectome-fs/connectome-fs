@@ -8,6 +8,7 @@ Where the substrate is going. Dates are intent, not contracts.
 * [x] GUID nodes, multi-names, associations, sharded search (v0 CLI)
 * [x] Editions / VCS-collapse design docs
 * [x] Semantic change units essay
+* [x] Pathogenesis and composition essay (userspace sidecar sketch)
 * [x] Org site + Antora docs (Valentus)
 
 == Next

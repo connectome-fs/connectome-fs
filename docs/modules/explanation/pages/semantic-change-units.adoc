@@ -84,8 +84,12 @@ Editions without semantic units still merge blobs.
 Semantic units without editions still thrash working copies.
 Together they explain why modern Git UX keeps inventing escape hatches—and why the durable fix is graph-native storage.
 
+Onboarding is a third cut: even with correct feature identity, a stranger still needs an evolutionary walk and a compositional map — see
+xref:pathogenesis-and-composition.adoc[Pathogenesis and composition].
+
 == Related
 
+* xref:pathogenesis-and-composition.adoc[Pathogenesis and composition]
 * xref:navigating-by-content.adoc[Labels versus wires]
 * xref:model.adoc[Connectome model]
 * xref:editions.adoc[Editions]

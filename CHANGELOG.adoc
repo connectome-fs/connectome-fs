@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-09-07 — Pathogenesis and composition
+
+Details: link:changelog-details/2026-09-07 - pathogenesis and composition.adoc[2026-09-07 - pathogenesis and composition]
+
+* Explanation: evolutionary (pathogenesis) and compositional lenses over GUID identity
+* Userspace sidecar sketch; cross-links from model and semantic change units
+* Pilot pointer: dlang-supplemental/tgc `pathogenesis/`
+
 == 2026-09-02 — Host-held history cross-link
 
 * Labels versus wires explanation: link Provider search and mirror backups + HCI Host-held history; attachment bytes as content nodes vs forge CDN URLs only.

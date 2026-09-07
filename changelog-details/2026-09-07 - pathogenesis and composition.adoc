@@ -1,0 +1,7 @@
+= 2026-09-07 - pathogenesis and composition
+
+Added an explanation page for *pathogenesis* (ordered teaching walks from a naive entrypoint) and *composition* (aspect graphs of the finished system).
+
+Both are projections over the connectome identity stack (path → MUID → GUID; content OID for immutable steps). Git remains optional sync; teaching metadata uses association types (`evolves-from`, `lesson-of`, `aspect-of`, `extracted-to`), not invented URL schemes.
+
+Documents why hot IPFS/IPNS republish is a poor fit for rapid AI commits while still reusing content addressing + mutable lineage pointers. Points at the userspace sidecar pilot in `dlang-supplemental/tgc`.

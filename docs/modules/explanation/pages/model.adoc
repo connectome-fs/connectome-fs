@@ -28,7 +28,10 @@ A node has many *name tokens*, each with a role (`display`, `version`, `type`,
 == Associations
 
 Typed edges: `member-of`, `parent-of`, `related-to`, `generated-from`,
-`depends-on`. Local by default; global when published (future).
+`depends-on`. Onboarding / teaching walks add associations such as
+`evolves-from`, `lesson-of`, `aspect-of`, and `extracted-to` — see
+xref:pathogenesis-and-composition.adoc[Pathogenesis and composition].
+Local by default; global when published (future).
 
 == Context bar
 
@@ -47,9 +50,11 @@ Hierarchy-as-slice is not enough for concurrent workspaces. See
 xref:editions.adoc[Editions] (process-scoped fork bindings),
 xref:compatibility-projection.adoc[Compatibility projection]
 (hierarchical views without stealing alphanumeric names),
-xref:vcs-collapse.adoc[VCS collapse over editions], and
+xref:vcs-collapse.adoc[VCS collapse over editions],
 xref:semantic-change-units.adoc[Semantic change units]
-(features and dependencies as graph identity, not only file blobs).
+(features and dependencies as graph identity, not only file blobs), and
+xref:pathogenesis-and-composition.adoc[Pathogenesis and composition]
+(evolutionary walks and compositional aspect graphs for onboarding).
 
 Apps that reinvent private connection graphs should lean on
 xref:app-connection-offload.adoc[App connection offload]. Shells that
