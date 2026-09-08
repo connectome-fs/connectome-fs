@@ -3,7 +3,7 @@
 :description: Pretty path labels vs content identity — how connectome-fs relates to CAS, mutable pointers, reverse consumers, and the HCI Nerdz diagnosis/treatment face.
 :toc:
 
-image::navigating-by-content/icon.svg[Hash core with detachable path label,width=96]
+image::navigating-by-content/icon.svg[Hash core with detachable path label,width=240,role=themed-svg]
 
 Connectome-fs exists because *path strings are a bad identity*.
 Hierarchy is a navigation slice people understand.

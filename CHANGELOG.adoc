@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-09-08 — Adaptive Labels versus wires diagrams
+
+Details: link:changelog-details/2026-09-08 - adaptive labels-versus-wires diagrams.adoc[2026-09-08 - adaptive labels-versus-wires diagrams]
+
+* Rebuilt the explanatory and compact variants from separate, layout-appropriate Mermaid sources
+* Added standalone adaptive and host-themed artifacts with explicit semantic manifests
+* Antora progressively enhances only the referenced explanatory image; the orphaned site derivative remains runtime-neutral
+
 == 2026-09-07 — Pathogenesis and composition
 
 Details: link:changelog-details/2026-09-07 - pathogenesis and composition.adoc[2026-09-07 - pathogenesis and composition]

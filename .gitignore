@@ -46,3 +46,4 @@ site/public/manual/
 site/dist/
 **/.DS_Store
 **/Thumbs.db
+**/*.raw.svg

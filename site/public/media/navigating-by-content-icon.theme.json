@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "namespace": "connectome-labels-wires-compact",
+  "source": {
+    "kind": "mermaid",
+    "uri": "navigating-by-content-icon.mmd",
+    "generator": "@mermaid-js/mermaid-cli"
+  },
+  "tokens": [
+    { "id": "color.canvas" },
+    { "id": "color.identity.surface" },
+    { "id": "color.identity.border" },
+    { "id": "color.identity.text" },
+    { "id": "color.label.surface" },
+    { "id": "color.label.border" },
+    { "id": "color.label.text" },
+    { "id": "color.pointer" }
+  ],
+  "defaultPreset": "signal-field",
+  "presets": {
+    "signal-field": {
+      "color.canvas": "transparent",
+      "color.identity.surface": "#0c6b6e",
+      "color.identity.border": "#145a5c",
+      "color.identity.text": "#ffffff",
+      "color.label.surface": "#f4f7f8",
+      "color.label.border": "#d4568c",
+      "color.label.text": "#142029",
+      "color.pointer": "#d4568c"
+    }
+  },
+  "paletteOverrides": {
+    "dark": {
+      "color.canvas": "transparent",
+      "color.identity.surface": "#3ec9c4",
+      "color.identity.border": "#7adcd8",
+      "color.identity.text": "#071718",
+      "color.label.surface": "#17262d",
+      "color.label.border": "#f083b4",
+      "color.label.text": "#f4f7f8",
+      "color.pointer": "#f083b4"
+    }
+  },
+  "bindings": [
+    { "kind": "inline-style", "selector": "svg", "property": "background-color", "token": "color.canvas" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity path", "property": "fill", "token": "color.identity.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity path", "property": "stroke", "token": "color.identity.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity tspan", "property": "fill", "token": "color.identity.text" },
+    { "kind": "stylesheet", "selector": "#my-svg .label rect", "property": "fill", "token": "color.label.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .label rect", "property": "stroke", "token": "color.label.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .label tspan", "property": "fill", "token": "color.label.text" },
+    { "kind": "inline-style", "selector": ".flowchart-link", "property": "stroke", "token": "color.pointer" },
+    { "kind": "presentation", "selector": ".arrowMarkerPath", "attribute": "fill", "token": "color.pointer" },
+    { "kind": "presentation", "selector": ".arrowMarkerPath", "attribute": "stroke", "token": "color.pointer" }
+  ],
+  "fallback": { "unresolvedToken": "error", "missingTarget": "error" }
+}

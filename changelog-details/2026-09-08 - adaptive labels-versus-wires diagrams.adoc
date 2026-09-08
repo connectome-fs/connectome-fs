@@ -1,0 +1,10 @@
+= Adaptive Labels versus wires diagrams
+
+The Antora explanation and its compact site derivative now keep separate Mermaid sources because their wide and vertical layouts serve different contexts.
+Explicit Themed SVG manifests generate a standalone adaptive `name.svg` and a host-controlled `name.host.svg` from each raw Mermaid render.
+
+The Antora image keeps ordinary AsciiDoc image syntax and gains a role consumed by supplemental UI.
+If the same-origin host artifact loads and passes runtime sanitization, it follows Valentus manual light/dark mode; otherwise the adaptive image remains visible.
+The currently orphaned SolidStart media derivative has no runtime plumbing.
+
+The previous fixed artwork is retained under `legacy-fixed` filenames, and CI checks generated-artifact freshness.

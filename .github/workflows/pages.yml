@@ -38,6 +38,10 @@ jobs:
         working-directory: site
         run: pnpm install
 
+      - name: Check themed diagram artifacts
+        working-directory: site
+        run: pnpm diagrams:check
+
       - name: Build SolidStart (static)
         working-directory: site
         env:
