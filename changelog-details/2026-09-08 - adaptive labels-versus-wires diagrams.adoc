@@ -10,3 +10,5 @@ Both diagrams render deterministically with Mermaid `htmlLabels: false`, then pr
 Antora and SolidStart keep ordinary adaptive `<img>` fallbacks.
 Their existing manual theme state progressively upgrades those images to same-origin host artifacts only after the runtime fetches, sanitizes, and validates accessible SVG.
 Generation rejects active/external content and missing accessibility metadata; CI also checks canonical outputs and every consumer copy for staleness.
+On isolated Linux GitHub Actions runners, generation passes Mermaid CLI an explicit Puppeteer profile that disables Chromium's unavailable sandbox.
+Other environments, including Windows, retain Mermaid CLI's default launch behavior.

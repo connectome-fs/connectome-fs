@@ -13,6 +13,13 @@ import { prepareThemedMermaidSvg } from "@dev-centr/mermaid-svg-css-vars";
 const check = process.argv.includes("--check");
 const siteRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = join(siteRoot, "..");
+const githubActionsPuppeteerArgs =
+  process.platform === "linux" && process.env.GITHUB_ACTIONS === "true"
+    ? [
+        "-p",
+        join(siteRoot, "scripts/puppeteer-github-actions.json"),
+      ]
+    : [];
 const diagrams = [
   {
     stem: "diagrams/labels-versus-wires/labels-versus-wires",
@@ -111,6 +118,7 @@ for (const { stem, consumers } of diagrams) {
   run([
     "exec",
     "mmdc",
+    ...githubActionsPuppeteerArgs,
     "-i",
     join(repoRoot, `${stem}.mmd`),
     "-o",
