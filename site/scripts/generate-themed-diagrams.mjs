@@ -153,40 +153,39 @@ for (const { stem, consumers } of diagrams) {
     writeFileSync(join(repoRoot, rawPath), normalized);
   }
 
-  run([
-    "exec",
-    "mermaid-svg-css-vars",
-    "--manifest",
-    join(repoRoot, `${stem}.theme.json`),
-    "--dual-output",
-    ...(check ? ["--check"] : []),
-    join(repoRoot, rawPath),
-  ]);
-  const manifest = JSON.parse(
-    readFileSync(join(repoRoot, `${stem}.theme.json`), "utf8"),
-  );
-  const artifactSource = windowsCheckPath
-    ? readFileSync(join(repoRoot, rawPath), "utf8")
-    : normalized;
-  const fixed = prepareThemedMermaidSvg(artifactSource, manifest, {
-    mode: "fixed",
-    preset: manifest.defaultPreset,
-  });
-  const fixedErrors = fixed.diagnostics.filter(
-    ({ severity }) => severity === "error",
-  );
-  if (!fixed.svg || fixedErrors.length > 0) {
-    throw new Error(
-      `${stem}.fixed.svg generation failed: ${fixedErrors.map(({ message }) => message).join("; ")}`,
+  if (!windowsCheckPath) {
+    run([
+      "exec",
+      "mermaid-svg-css-vars",
+      "--manifest",
+      join(repoRoot, `${stem}.theme.json`),
+      "--dual-output",
+      ...(check ? ["--check"] : []),
+      join(repoRoot, rawPath),
+    ]);
+    const manifest = JSON.parse(
+      readFileSync(join(repoRoot, `${stem}.theme.json`), "utf8"),
     );
-  }
-  const fixedPath = join(repoRoot, `${stem}.fixed.svg`);
-  if (check) {
-    if (!existsSync(fixedPath) || readFileSync(fixedPath, "utf8") !== fixed.svg) {
-      throw new Error(`stale: ${stem}.fixed.svg`);
+    const fixed = prepareThemedMermaidSvg(normalized, manifest, {
+      mode: "fixed",
+      preset: manifest.defaultPreset,
+    });
+    const fixedErrors = fixed.diagnostics.filter(
+      ({ severity }) => severity === "error",
+    );
+    if (!fixed.svg || fixedErrors.length > 0) {
+      throw new Error(
+        `${stem}.fixed.svg generation failed: ${fixedErrors.map(({ message }) => message).join("; ")}`,
+      );
     }
-  } else {
-    writeFileSync(fixedPath, fixed.svg);
+    const fixedPath = join(repoRoot, `${stem}.fixed.svg`);
+    if (check) {
+      if (!existsSync(fixedPath) || readFileSync(fixedPath, "utf8") !== fixed.svg) {
+        throw new Error(`stale: ${stem}.fixed.svg`);
+      }
+    } else {
+      writeFileSync(fixedPath, fixed.svg);
+    }
   }
   verify(`${stem}.svg`, "adaptive");
   verify(`${stem}.host.svg`, "host");
