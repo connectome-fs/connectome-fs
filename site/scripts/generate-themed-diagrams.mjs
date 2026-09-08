@@ -3,9 +3,11 @@ import {
   existsSync,
   mkdirSync,
   readFileSync,
+  unlinkSync,
   writeFileSync,
 } from "node:fs";
 import { spawnSync } from "node:child_process";
+import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { prepareThemedMermaidSvg } from "@dev-centr/mermaid-svg-css-vars";
@@ -75,8 +77,7 @@ function normalizeSvg(svg) {
     .replace(/\saria-roledescription="[^"]*"/, "");
 }
 
-function verify(path, mode) {
-  const svg = readFileSync(join(repoRoot, path), "utf8");
+function verifySvg(svg, path, mode) {
   const required = [
     /<svg\b/,
     /<title\b/,
@@ -113,8 +114,20 @@ function verify(path, mode) {
   }
 }
 
+function verify(path, mode) {
+  verifySvg(readFileSync(join(repoRoot, path), "utf8"), path, mode);
+}
+
 for (const { stem, consumers } of diagrams) {
   const rawPath = `${stem}.raw.svg`;
+  const windowsCheckPath =
+    check && process.platform === "win32"
+      ? join(
+          tmpdir(),
+          `connectome-fs-${process.pid}-${stem.replaceAll("/", "-")}.raw.svg`,
+        )
+      : undefined;
+  const renderedRawPath = windowsCheckPath ?? join(repoRoot, rawPath);
   run([
     "exec",
     "mmdc",
@@ -122,7 +135,7 @@ for (const { stem, consumers } of diagrams) {
     "-i",
     join(repoRoot, `${stem}.mmd`),
     "-o",
-    join(repoRoot, rawPath),
+    renderedRawPath,
     "-b",
     "transparent",
     "-c",
@@ -130,12 +143,15 @@ for (const { stem, consumers } of diagrams) {
   ]);
 
   const normalized = normalizeSvg(
-    readFileSync(join(repoRoot, rawPath), "utf8"),
+    readFileSync(renderedRawPath, "utf8"),
   );
+  if (windowsCheckPath) unlinkSync(windowsCheckPath);
   if (normalized.includes("<foreignObject")) {
     throw new Error(`${rawPath} still contains foreignObject`);
   }
-  writeFileSync(join(repoRoot, rawPath), normalized);
+  if (!windowsCheckPath) {
+    writeFileSync(join(repoRoot, rawPath), normalized);
+  }
 
   run([
     "exec",
@@ -149,7 +165,10 @@ for (const { stem, consumers } of diagrams) {
   const manifest = JSON.parse(
     readFileSync(join(repoRoot, `${stem}.theme.json`), "utf8"),
   );
-  const fixed = prepareThemedMermaidSvg(normalized, manifest, {
+  const artifactSource = windowsCheckPath
+    ? readFileSync(join(repoRoot, rawPath), "utf8")
+    : normalized;
+  const fixed = prepareThemedMermaidSvg(artifactSource, manifest, {
     mode: "fixed",
     preset: manifest.defaultPreset,
   });

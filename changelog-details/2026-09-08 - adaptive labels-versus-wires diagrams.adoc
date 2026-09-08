@@ -12,3 +12,4 @@ Their existing manual theme state progressively upgrades those images to same-or
 Generation rejects active/external content and missing accessibility metadata; CI also checks canonical outputs and every consumer copy for staleness.
 On isolated Linux GitHub Actions runners, generation passes Mermaid CLI an explicit Puppeteer profile that disables Chromium's unavailable sandbox.
 Other environments, including Windows, retain Mermaid CLI's default launch behavior.
+Linux supplies canonical geometry; Windows checks still render every source for validity, then compare the committed canonical outputs and consumer copies without rewriting them for platform font metrics.
