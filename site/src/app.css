@@ -10,6 +10,18 @@
   --synapse: #d4568c;
   --copper: #b86a3d;
   --line: rgba(20, 32, 41, 0.14);
+  --themed-svg-connectome-labels-wires-color-canvas: transparent;
+  --themed-svg-connectome-labels-wires-color-identity-surface: var(--signal);
+  --themed-svg-connectome-labels-wires-color-identity-border: #145a5c;
+  --themed-svg-connectome-labels-wires-color-identity-text: var(--signal-ink);
+  --themed-svg-connectome-labels-wires-color-label-surface: #f4f7f8;
+  --themed-svg-connectome-labels-wires-color-label-border: var(--synapse);
+  --themed-svg-connectome-labels-wires-color-label-text: var(--ink);
+  --themed-svg-connectome-labels-wires-color-relation-surface: var(--field-deep);
+  --themed-svg-connectome-labels-wires-color-relation-border: var(--signal);
+  --themed-svg-connectome-labels-wires-color-relation-text: var(--ink);
+  --themed-svg-connectome-labels-wires-color-pointer: var(--synapse);
+  --themed-svg-connectome-labels-wires-color-edge: var(--signal);
   --font-display: "Syne", "Segoe UI", sans-serif;
   --font-body: "Source Sans 3", "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -27,6 +39,8 @@ html[data-theme="dark"] {
   --synapse: #f078a8;
   --copper: #e09a62;
   --line: rgba(230, 238, 242, 0.14);
+  --themed-svg-connectome-labels-wires-color-identity-border: #7adcd8;
+  --themed-svg-connectome-labels-wires-color-label-surface: #17262d;
   color-scheme: dark;
 }
 
@@ -411,6 +425,12 @@ html[data-theme="dark"] .theme-icon-moon {
   height: auto;
   border: 1px solid var(--line);
   border-radius: 0.35rem;
+}
+
+.adoc themed-svg {
+  display: block;
+  width: 100%;
+  margin: 1.25rem 0 1.75rem;
 }
 
 .adoc .paragraph,

@@ -1,0 +1,19 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": false, "curve": "linear", "nodeSpacing": 28, "rankSpacing": 36}}}%%
+flowchart LR
+  accTitle: Labels versus wires
+  accDescr: A human-readable path label points to stable content identity, which carries semantic relationships such as depends-on and cites.
+
+  LABEL["Pretty path / URL"]
+  IDENTITY{{"Stable node id / content hash"}}
+  RELATION["depends-on / cites / implements"]
+  LABEL -. "projection / pointer" .-> IDENTITY
+  IDENTITY --> RELATION
+
+  classDef identity fill:#0c6b6e,stroke:#145a5c,color:#ffffff,stroke-width:3px;
+  classDef label fill:#f4f7f8,stroke:#d4568c,color:#142029,stroke-width:2px;
+  classDef relation fill:#e9eef2,stroke:#0c6b6e,color:#142029,stroke-width:2px;
+  class IDENTITY identity;
+  class LABEL label;
+  class RELATION relation;
+  linkStyle 0 stroke:#d4568c,stroke-width:2.5px;
+  linkStyle 1 stroke:#0c6b6e,stroke-width:2.5px;

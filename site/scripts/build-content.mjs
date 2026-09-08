@@ -96,7 +96,7 @@ ${items}
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>connectome-fs News</title>
   <link href="${siteUrl}/news"/>
-  <updated>${new Date().toISOString()}</updated>
+  <updated>${new Date(news[0]?.revdate || "1970-01-01").toISOString()}</updated>
   <id>${siteUrl}/news</id>
 ${news
   .map(

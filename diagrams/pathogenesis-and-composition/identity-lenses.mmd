@@ -1,0 +1,30 @@
+%%{init: {"theme": "base", "flowchart": {"htmlLabels": false, "curve": "linear", "nodeSpacing": 30, "rankSpacing": 42}}}%%
+flowchart LR
+  accTitle: Identity graph with evolutionary and compositional lenses
+  accDescr: Evolutionary walks and composition graphs point to stable GUID or MUID identity, whose current edition points to an immutable content snapshot; Git may provide an optional anchor.
+
+  subgraph LENSES["Teaching lenses"]
+    EVOLUTION["Evolutionary walk"]
+    COMPOSITION["Composition graph"]
+  end
+  subgraph IDENTITY["Identity"]
+    NODE{{"GUID or MUID"}}
+    SNAPSHOT["Content OID or CID"]
+    NODE -->|"tip or edition"| SNAPSHOT
+  end
+  GIT["Git remote sync"]
+
+  EVOLUTION -->|"ordered steps"| NODE
+  COMPOSITION -->|"aspect edges"| NODE
+  GIT -. "optional anchor" .-> SNAPSHOT
+
+  classDef lens fill:#f4f7f8,stroke:#d4568c,color:#142029,stroke-width:2px;
+  classDef identity fill:#0c6b6e,stroke:#145a5c,color:#ffffff,stroke-width:3px;
+  classDef snapshot fill:#e9eef2,stroke:#0c6b6e,color:#142029,stroke-width:2px;
+  classDef adapter fill:#f4f7f8,stroke:#b86a3d,color:#142029,stroke-width:2px;
+  class EVOLUTION,COMPOSITION lens;
+  class NODE identity;
+  class SNAPSHOT snapshot;
+  class GIT adapter;
+  linkStyle 0,1,2 stroke:#0c6b6e,stroke-width:2.5px;
+  linkStyle 3 stroke:#b86a3d,stroke-width:2.5px;

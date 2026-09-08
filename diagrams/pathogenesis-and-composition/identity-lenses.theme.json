@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "namespace": "connectome-identity-lenses",
+  "source": {
+    "kind": "mermaid",
+    "uri": "identity-lenses.mmd",
+    "generator": "@mermaid-js/mermaid-cli@11.17.0"
+  },
+  "tokens": [
+    { "id": "color.canvas" },
+    { "id": "color.identity.surface" },
+    { "id": "color.identity.border" },
+    { "id": "color.identity.text" },
+    { "id": "color.lens.surface" },
+    { "id": "color.lens.border" },
+    { "id": "color.lens.text" },
+    { "id": "color.snapshot.surface" },
+    { "id": "color.snapshot.border" },
+    { "id": "color.snapshot.text" },
+    { "id": "color.adapter.surface" },
+    { "id": "color.adapter.border" },
+    { "id": "color.adapter.text" },
+    { "id": "color.edge" }
+  ],
+  "defaultPreset": "signal-field",
+  "presets": {
+    "signal-field": {
+      "color.canvas": "transparent",
+      "color.identity.surface": "#0c6b6e",
+      "color.identity.border": "#145a5c",
+      "color.identity.text": "#ffffff",
+      "color.lens.surface": "#f4f7f8",
+      "color.lens.border": "#d4568c",
+      "color.lens.text": "#142029",
+      "color.snapshot.surface": "#e9eef2",
+      "color.snapshot.border": "#0c6b6e",
+      "color.snapshot.text": "#142029",
+      "color.adapter.surface": "#f4f7f8",
+      "color.adapter.border": "#b86a3d",
+      "color.adapter.text": "#142029",
+      "color.edge": "#0c6b6e"
+    }
+  },
+  "paletteOverrides": {
+    "dark": {
+      "color.canvas": "transparent",
+      "color.identity.surface": "#3ec9c4",
+      "color.identity.border": "#7adcd8",
+      "color.identity.text": "#071718",
+      "color.lens.surface": "#17262d",
+      "color.lens.border": "#f078a8",
+      "color.lens.text": "#f4f7f8",
+      "color.snapshot.surface": "#121a22",
+      "color.snapshot.border": "#3ec9c4",
+      "color.snapshot.text": "#e6eef2",
+      "color.adapter.surface": "#17262d",
+      "color.adapter.border": "#e09a62",
+      "color.adapter.text": "#f4f7f8",
+      "color.edge": "#3ec9c4"
+    }
+  },
+  "bindings": [
+    { "kind": "inline-style", "selector": "svg", "property": "background-color", "token": "color.canvas" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity polygon", "property": "fill", "token": "color.identity.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity polygon", "property": "stroke", "token": "color.identity.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .identity tspan", "property": "fill", "token": "color.identity.text" },
+    { "kind": "stylesheet", "selector": "#my-svg .lens rect", "property": "fill", "token": "color.lens.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .lens rect", "property": "stroke", "token": "color.lens.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .lens tspan", "property": "fill", "token": "color.lens.text" },
+    { "kind": "stylesheet", "selector": "#my-svg .snapshot rect", "property": "fill", "token": "color.snapshot.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .snapshot rect", "property": "stroke", "token": "color.snapshot.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .snapshot tspan", "property": "fill", "token": "color.snapshot.text" },
+    { "kind": "stylesheet", "selector": "#my-svg .adapter rect", "property": "fill", "token": "color.adapter.surface" },
+    { "kind": "stylesheet", "selector": "#my-svg .adapter rect", "property": "stroke", "token": "color.adapter.border" },
+    { "kind": "stylesheet", "selector": "#my-svg .adapter tspan", "property": "fill", "token": "color.adapter.text" },
+    { "kind": "inline-style", "selector": ".flowchart-link", "property": "stroke", "token": "color.edge" },
+    { "kind": "presentation", "selector": ".arrowMarkerPath", "attribute": "fill", "token": "color.edge" },
+    { "kind": "presentation", "selector": ".arrowMarkerPath", "attribute": "stroke", "token": "color.edge" }
+  ],
+  "fallback": { "unresolvedToken": "error", "missingTarget": "error" }
+}

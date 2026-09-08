@@ -4,6 +4,7 @@ import { Show, createMemo, onMount } from "solid-js";
 import blog from "~/lib/blog.generated.json";
 import { bootMermaid } from "~/lib/mermaid";
 import { bootKatex } from "~/lib/katex";
+import { bootThemedSvg } from "~/lib/themed-svg";
 
 type Post = {
   slug: string;
@@ -20,6 +21,7 @@ export default function BlogPost() {
   onMount(() => {
     bootMermaid().catch((err) => console.warn("[cfs-mermaid]", err));
     bootKatex().catch((err) => console.warn("[cfs-katex]", err));
+    bootThemedSvg();
   });
 
   return (

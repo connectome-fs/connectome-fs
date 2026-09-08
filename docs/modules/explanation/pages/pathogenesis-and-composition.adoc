@@ -72,22 +72,7 @@ Git remains a *sync and review* adapter.
 It does not have to own the teaching graph.
 When a file is refactored into another repository, record an `extracted-to` (or equivalent) edge between GUID nodes instead of a comment that will rot when the URL changes.
 
-[mermaid]
-----
-flowchart LR
-  subgraph identity [Identity]
-    Node[GUID_or_MUID]
-    Snap[Content_OID]
-    Node -->|tip_or_edition| Snap
-  end
-  subgraph lenses [Lenses]
-    Evo[Evolutionary_walk]
-    Comp[Composition_graph]
-  end
-  Evo -->|ordered_steps| Node
-  Comp -->|aspect_edges| Node
-  Git[Git_remote_sync] -.->|optional_anchor| Snap
-----
+image::pathogenesis-and-composition/identity-lenses.svg["Evolutionary walks and composition graphs point to stable identity and immutable content snapshots",role=themed-svg]
 
 === Content addressing vs hot commit cadence
 

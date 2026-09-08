@@ -28,12 +28,7 @@ Connectome-fs wants reverse edges in the store itself.
 . *Reverse consumers* for leftover labels on today's web
 . *Redirects* while the classical web remains string-shaped
 
-[source,mermaid]
-----
-flowchart LR
-  Label[Pretty path] -.-> Node[Node / hash]
-  Node --> Edge[depends-on / cites]
-----
+image::/connectome-fs/media/labels-versus-wires.svg["A human-readable path label points to stable content identity, which carries semantic relationships",role=themed-svg]
 
 == Where to read next
 

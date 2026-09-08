@@ -3,8 +3,6 @@
 :description: Pretty path labels vs content identity — how connectome-fs relates to CAS, mutable pointers, reverse consumers, and the HCI Nerdz diagnosis/treatment face.
 :toc:
 
-image::navigating-by-content/icon.svg[Hash core with detachable path label,width=240,role=themed-svg]
-
 Connectome-fs exists because *path strings are a bad identity*.
 Hierarchy is a navigation slice people understand.
 The graph — nodes, typed associations, editions — is where meaning and dependency should live.
@@ -29,15 +27,7 @@ People feel the *symptom* (rename/URL rot) first; this page sits with the diagno
 | Fixing that by addressing *nodes* (GUID / content / semantic units) and edges, with paths as projections
 |===
 
-[mermaid]
-----
-flowchart LR
-  Label[Pretty path / URL]
-  Node[Node id / content hash]
-  Edge[depends-on / cites / implements]
-  Label -.->|projection / pointer| Node
-  Node --> Edge
-----
+image::navigating-by-content/labels-versus-wires.svg["A human-readable path label points to stable content identity, which carries semantic relationships",role=themed-svg]
 
 == Stack (with HCI Nerdz)
 

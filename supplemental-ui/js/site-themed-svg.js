@@ -2,7 +2,7 @@ import { upgradeThemedSvgImages } from "https://cdn.jsdelivr.net/npm/@dev-centr/
 
 const upgrade = () =>
   upgradeThemedSvgImages(document, {
-    selector: ".image.themed-svg img",
+    selector: ".imageblock.themed-svg img",
   })
 
 if (document.readyState === "loading") {

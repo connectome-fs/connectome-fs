@@ -1,10 +1,12 @@
-= Adaptive Labels versus wires diagrams
+= Adaptive themed diagrams
 
-The Antora explanation and its compact site derivative now keep separate Mermaid sources because their wide and vertical layouts serve different contexts.
-Explicit Themed SVG manifests generate a standalone adaptive `name.svg` and a host-controlled `name.host.svg` from each raw Mermaid render.
+The Antora *Labels versus wires* explanation and SolidStart *Paths are labels, not identity* post now consume copies generated from one canonical Mermaid source.
+No compact variant is retained: the responsive wide diagram fits both content columns without introducing a second conceptual source.
+The earlier hand-authored artwork remains in the canonical diagram directory as `labels-versus-wires.fixed-original.svg`.
 
-The Antora image keeps ordinary AsciiDoc image syntax and gains a role consumed by supplemental UI.
-If the same-origin host artifact loads and passes runtime sanitization, it follows Valentus manual light/dark mode; otherwise the adaptive image remains visible.
-The currently orphaned SolidStart media derivative has no runtime plumbing.
+The inline pathogenesis/composition diagram is likewise extracted into a canonical `identity-lenses.mmd` source and explicit Themed SVG manifest.
+Both diagrams render deterministically with Mermaid `htmlLabels: false`, then produce standalone-adaptive, host, and resolved fixed artifacts through `@dev-centr/mermaid-svg-css-vars` 0.1.2 and `@dev-centr/themed-svg` runtime 0.1.1.
 
-The previous fixed artwork is retained under `legacy-fixed` filenames, and CI checks generated-artifact freshness.
+Antora and SolidStart keep ordinary adaptive `<img>` fallbacks.
+Their existing manual theme state progressively upgrades those images to same-origin host artifacts only after the runtime fetches, sanitizes, and validates accessible SVG.
+Generation rejects active/external content and missing accessibility metadata; CI also checks canonical outputs and every consumer copy for staleness.
