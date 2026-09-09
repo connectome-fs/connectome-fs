@@ -74,7 +74,7 @@ open_document(path)
 
 ConfigUI's document banner (format spec, codec link, publisher repository) maps naturally onto `/meta`.
 
-Partner doc: DevCentr xref:uniconfig:architecture.adoc[UniConfig architecture] (docs.devcentr.org).
+Partner doc: link:https://docs.devcentr.org/uniconfig/[UniConfig architecture] (docs.devcentr.org).
 
 == Standardization stance
 
