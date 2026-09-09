@@ -1,0 +1,14 @@
+= Site separated from product
+:revdate: 2026-09-08
+
+The core repository now contains the filesystem implementation, its Antora
+component, and documentation asset tooling. Organization-level website content
+has moved to `connectome-fs/connectome-fs.github.io`.
+
+The product documentation remains under `docs/` so implementation and
+reference material evolve together. The organization site aggregates that
+component and publishes it at `https://connectome-fs.github.io/docs/`.
+
+The old project Pages workflow and `/connectome-fs/` base-path site were
+removed. Mermaid diagram generation moved to root-level package scripts so
+documentation assets remain reproducible after the site migration.

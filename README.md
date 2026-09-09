@@ -9,9 +9,9 @@
   <h1>connectome-fs</h1>
   <p>Graph-native filesystem substrate: GUID-addressed nodes, multi-name tokens, hierarchy as a navigation view, typed associations, editions, and sharded search.</p>
   <p>
-    <a href="https://connectome-fs.github.io/connectome-fs/"><strong>Explore the site »</strong></a>
+    <a href="https://connectome-fs.github.io/docs/"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://connectome-fs.github.io/connectome-fs/docs/">Docs</a>
+    <a href="https://connectome-fs.github.io/">Website</a>
     ·
     <a href="https://github.com/connectome-fs/connectome-fs/issues">Report Bug</a>
     ·
@@ -27,20 +27,14 @@ Partner lanes: [DevCentr](https://devcentr.org) · [OpenShellOrg](https://opensh
 
 ## Site + docs
 
-* **Marketing site** — SolidStart static under `site/` (**Signal Field** design — see `DESIGN.md`)
-* **News / blog / roadmap** — AsciiDoc under `site/content/` → `pnpm run content:build`
-* **Docs** — Antora + Valentus theme → `site/public/docs/` (served at `/docs/`)
-* **Pages** — `.github/workflows/pages.yml` → https://connectome-fs.github.io/connectome-fs/
+* **Product documentation source** — Antora component under `docs/`
+* **Organization website + docs hub** — [connectome-fs.github.io](https://github.com/connectome-fs/connectome-fs.github.io)
+* **Published docs** — https://connectome-fs.github.io/docs/
+* **Diagram sources** — Mermaid under `diagrams/`; generated with the root package scripts
 
 ```powershell
-# Manual
-npm install -g @antora/cli @antora/site-generator @antora/lunr-extension
-antora antora-playbook.yml
-
-# Site
-cd site
 pnpm install
-pnpm build   # BASE_PATH=/connectome-fs/ in CI
+pnpm diagrams:check
 ```
 
 ## Tutorial: quickstart

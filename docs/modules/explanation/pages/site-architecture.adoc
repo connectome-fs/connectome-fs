@@ -8,15 +8,17 @@ SolidStart is an **app framework**. They do not share a runtime component model.
 
 What *does* make sense is **concurrent use**:
 
-* SolidStart owns marketing, news, theme, and navigation chrome.
-* Antora owns versioned docs UX (nav, page layout, xrefs, UI bundle) at `/docs/`.
-* CI builds Antora into `site/public/docs/` so GitHub Pages serves both from one deploy.
-* AsciiDoc sources stay in-repo (`docs/`) as the single authoring source.
+* The `connectome-fs.github.io` repository owns marketing, news, theme, and navigation chrome.
+* Its Antora playbook owns the versioned docs UX at `/docs/`.
+* Site CI builds Antora into `public/docs/` before SolidStart assembles the Pages artifact.
+* Product AsciiDoc sources stay in this repository under `docs/` as the single authoring source.
 
 [source]
 ----
-/                 ← SolidStart (home, news, blog, roadmap, about)
-/docs/**          ← Antora static output (copied into public/docs)
+connectome-fs.github.io/       ← SolidStart source and Antora playbook
+connectome-fs/docs/            ← Antora component source
+https://connectome-fs.github.io/
+  /docs/**                     ← Antora static output
 ----
 
 == Live updates

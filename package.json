@@ -1,0 +1,17 @@
+{
+  "name": "connectome-fs-doc-assets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "diagrams:generate": "node scripts/generate-themed-diagrams.mjs",
+    "diagrams:check": "node scripts/generate-themed-diagrams.mjs --check"
+  },
+  "devDependencies": {
+    "@dev-centr/mermaid-svg-css-vars": "0.1.2",
+    "@mermaid-js/mermaid-cli": "^11.17.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

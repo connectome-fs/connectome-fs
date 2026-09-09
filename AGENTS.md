@@ -5,15 +5,16 @@ Project facts for agents. Workstation/env facts live only in `$CODE_ROOT/MEMORIE
 ## Identity
 
 - Org + repo: `connectome-fs/connectome-fs` (transferred AMDphreak → dev-centr → connectome-fs)
-- Public site: https://connectome-fs.github.io/connectome-fs/
-- Docs: Antora Valentus at `/docs/` (`antora-playbook.yml` → `site/public/docs/`)
+- Public site: https://connectome-fs.github.io/
+- Docs: Antora component under `docs/`, aggregated at https://connectome-fs.github.io/docs/
 - Partners (not owners): DevCentr, OpenShellOrg, HCI Nerdz, linx.photos, InstaLay
 
 ## Stack
 
 - Rust workspace, SQLite (`rusqlite` bundled), CLI binary `cfs` (`connectome-cli`)
 - Bindings: Rust core + C ABI; D first wrapper — `docs/modules/explanation/pages/bindings.adoc`
-- Site: SolidStart **Signal Field** (`DESIGN.md`); news/blog/roadmap from AsciiDoc under `site/content/`
+- Site source, org news/blog/roadmap, and Antora hub: `connectome-fs/connectome-fs.github.io`
+- Documentation diagrams: canonical Mermaid under `diagrams/`; root `pnpm diagrams:check`
 - `.gitignore` is allow-list (`*` then `!` includes). Do **not** allow-list `MEMORIES.md`.
 
 ## Related HCI claim

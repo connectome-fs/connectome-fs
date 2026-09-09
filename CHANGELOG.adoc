@@ -1,5 +1,14 @@
 = Changelog
 
+== 2026-09-08 — Site separated from product
+
+Details: link:changelog-details/2026-09-08 - site separated from product.adoc[2026-09-08 - site separated from product]
+
+* Moved the organization website, news, blog, roadmap, and Antora playbook to `connectome-fs/connectome-fs.github.io`
+* Kept the Antora component under `docs/` beside the product source and published it through the organization hub at `/docs/`
+* Removed the obsolete `/connectome-fs/` project Pages deployment
+* Preserved documentation diagram generation as root-level project tooling
+
 == 2026-09-08 — Adaptive Labels versus wires diagrams
 
 Details: link:changelog-details/2026-09-08 - adaptive labels-versus-wires diagrams.adoc[2026-09-08 - adaptive labels-versus-wires diagrams]
