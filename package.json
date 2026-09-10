@@ -8,10 +8,16 @@
   },
   "devDependencies": {
     "@dev-centr/mermaid-svg-css-vars": "0.1.2",
+    "@dev-centr/themed-svg": "file:../../dev-centr/themed-svg",
     "@mermaid-js/mermaid-cli": "^11.17.0"
   },
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@9.15.4",
+  "pnpm": {
+    "overrides": {
+      "@dev-centr/themed-svg": "file:../../dev-centr/themed-svg"
+    }
+  }
 }

@@ -19,6 +19,13 @@ Last updated:: {page-last-edited}
 ****
 endif::[]
 
+== 2026-09-10 — Host diagram fills follow dark mode
+
+Details: xref:changelog-details/2026-09-10 - host diagram css vars.adoc[2026-09-10 - host diagram css vars]
+
+* Regenerated Mermaid host SVGs with `@dev-centr/themed-svg` 0.2.2 so inline `fill`/`stroke` `!important` paints become `var(--themed-svg-connectome-…)`
+* Diagram builds pin local themed-svg so dark host CSS can recolor nodes after runtime upgrade
+
 == 2026-09-10 — Component home metadata chrome
 
 Details: xref:changelog-details/2026-09-10 - component home metadata chrome.adoc[2026-09-10 - component home metadata chrome]

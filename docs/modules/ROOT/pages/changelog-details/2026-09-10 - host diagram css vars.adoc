@@ -1,0 +1,28 @@
+= Host diagram CSS variables
+:page-audience: Maintainers and readers tracking functional history of connectome-fs
+:page-usage-context: Changelog detail under the Antora component; subordinate to the changelog index
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-10
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
+
+Labels-versus-wires and identity-lenses host SVGs kept light Mermaid node fills
+after the Themed SVG runtime could apply connectome host CSS namespaces. Inline
+`style="fill:#… !important"` beat those variables.
+
+Both diagrams were regenerated with `@dev-centr/themed-svg` 0.2.2 (local pin)
+so stylesheet bindings rewrite those paints to `var(--themed-svg-connectome-…)`
+with fallbacks. Dark mode can recolor nodes once the runtime upgrades the image.
