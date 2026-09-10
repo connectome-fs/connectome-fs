@@ -2,7 +2,7 @@
 name = "connectome-core"
 version.workspace = true
 edition.workspace = true
-license.workspace = true
+license-file = "../../LICENSE"
 description = "GUID-addressed connectome graph: nodes, multi-names, associations, contexts"
 
 [dependencies]

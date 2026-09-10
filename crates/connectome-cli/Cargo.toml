@@ -2,7 +2,7 @@
 name = "connectome-cli"
 version.workspace = true
 edition.workspace = true
-license.workspace = true
+license-file = "../../LICENSE"
 description = "cfs — connectome-fs command-line interface"
 
 [[bin]]

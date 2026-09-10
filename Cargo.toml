@@ -9,9 +9,9 @@ default-members = ["crates/connectome-cli"]
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-license = "MIT"
-repository = "https://github.com/AMDphreak/connectome-fs"
-authors = ["AMDphreak"]
+license-file = "LICENSE"
+repository = "https://github.com/connectome-fs/connectome-fs"
+authors = ["Ryan Johnson"]
 
 [workspace.dependencies]
 connectome-core = { path = "crates/connectome-core" }

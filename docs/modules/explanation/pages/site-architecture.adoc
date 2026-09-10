@@ -1,32 +1,63 @@
-= Site architecture: SolidStart + Antora
+= Site architecture
 :toc:
+:page-audience: Maintainers and contributors wiring the org docs surfaces
+:page-usage-context: Explanation of the three-repo docs topology
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
 
-== Does a “Solid extension that loads Antora” make sense?
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
 
-Not really. Antora is a **build-time** docs site generator (AsciiDoc → static HTML + UI bundle + extensions).
-SolidStart is an **app framework**. They do not share a runtime component model.
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
-What *does* make sense is **concurrent use**:
+== Three repositories
 
-* The `connectome-fs.github.io` repository owns marketing, news, theme, and navigation chrome.
-* Its Antora playbook owns the versioned docs UX at `/docs/`.
-* Site CI builds Antora into `public/docs/` before SolidStart assembles the Pages artifact.
-* Product AsciiDoc sources stay in this repository under `docs/` as the single authoring source.
+connectome-fs publishes documentation from a dedicated hub, not from the marketing site.
+
+[cols="1,2"]
+|===
+| Repository | Role
+
+| `connectome-fs/connectome-fs`
+| Product source (Rust crates, CLI) and the Antora *component* under `docs/`
+
+| `connectome-fs/docs`
+| Docs *hub* — Antora playbook (Valentus + Facto), home portal, GitHub Pages deploy for `/docs/`
+
+| `connectome-fs/connectome-fs.github.io`
+| Organization website (SolidStart) — news, about, roadmap; Antora is *not* embedded here
+|===
 
 [source]
 ----
-connectome-fs.github.io/       ← SolidStart source and Antora playbook
-connectome-fs/docs/            ← Antora component source
-https://connectome-fs.github.io/
-  /docs/**                     ← Antora static output
+connectome-fs/connectome-fs/docs/     ← Antora component (authoring)
+connectome-fs/docs/                   ← Hub playbook + Pages deploy
+connectome-fs.github.io/              ← Marketing / news site only
+
+https://connectome-fs.github.io/      ← Website
+https://connectome-fs.github.io/docs/ ← Docs hub
+https://connectome-fs.github.io/docs/connectome-fs/  ← This component (alias)
 ----
+
+== Why not Antora inside SolidStart?
+
+Antora is a *build-time* docs site generator (AsciiDoc → static HTML + UI bundle + extensions).
+SolidStart is an *app framework*. They do not share a runtime component model.
+
+Embedding Antora into the website repo forced a second docs pipeline and made the marketing site responsible for versioned docs UX.
+The hub owns that UX now; the website links to it.
 
 == Live updates
 
-Antora output is static. “Live on source update” means **rebuild** (push → Actions → Pages), not hot-reloading Antora inside Solid at runtime.
-If you later need true live preview, add a separate authoring preview (AsciiDoc → HTML) — that is not Antora-in-Solid.
-
-== Advisable?
-
-Yes: side-by-side static composition is the usual, low-friction pattern (framework site + Antora under a sibling path).
-Building a Solid “Antora loader” would reimplement Antora’s site assembler poorly and fight Antora’s extension ecosystem.
+Antora output is static. “Live on source update” means *rebuild* the docs hub (push → Actions → Pages), not hot-reloading Antora inside Solid at runtime.
+Pushing this product repository alone does not refresh the aggregator until the docs hub workflow runs (or a hub redeploy is triggered).

@@ -17,6 +17,7 @@
 ** xref:explanation:shell-query-surface.adoc[Shell query surface]
 ** xref:explanation:bindings.adoc[Bindings & access targets]
 ** xref:explanation:sources.adoc[Source docs map]
-** xref:explanation:site-architecture.adoc[Site + Antora]
+** xref:explanation:site-architecture.adoc[Site architecture]
 * Reference
 ** xref:reference:query.adoc[Query grammar]
+* xref:changelog.adoc[Changelog]

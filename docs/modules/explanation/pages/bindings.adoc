@@ -1,5 +1,24 @@
 = Language Bindings and Access Targets
 :toc:
+:page-audience: Developers choosing language bindings or access targets
+:page-usage-context: Explanation on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 connectome-fs keeps a **Rust core** (store, mount path, FFI) and pours **D** into
 utilities and GUI tooling. Everything else binds through a stable boundary.

@@ -1,5 +1,24 @@
 = VCS collapse over editions
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 When the filesystem natively supports xref:editions.adoc[editions],
 version-control tools stop owning working trees, object stores that
@@ -64,7 +83,7 @@ understand language ASTs.
 * xref:semantic-change-units.adoc[Semantic change units]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:shell-query-surface.adoc[Shell query surface]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/vcs-over-fs-editions.html[Dev-Centr: VCS over FS editions]
-* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-semantic-boundaries/[Dev-Centr: Git's file-shaped change model]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-concurrency-enshittification/[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/vcs-over-fs-editions/[Dev-Centr: VCS over FS editions]
+* link:https://docs.opensh.org/shell-architecture/session-association.html[OpenShellOrg: Session association]

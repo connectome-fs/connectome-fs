@@ -1,5 +1,24 @@
 = Shell query surface
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 v0 ships a space-separated filter grammar (`cfs query`) documented in
 xref:reference:query.adoc[Query grammar]. That is a *search* surface.
@@ -50,5 +69,5 @@ Next:
 * xref:reference:query.adoc[Query grammar]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:editions.adoc[Editions]
-* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
-* link:https://docs.opensh.org/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
+* link:https://docs.opensh.org/shell-architecture/session-association.html[OpenShellOrg: Session association]
+* link:https://docs.opensh.org/shell-architecture/persistent-shell-context.html[OpenShellOrg: Persistent shell context]

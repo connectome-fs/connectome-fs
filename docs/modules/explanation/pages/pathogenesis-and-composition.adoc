@@ -2,6 +2,25 @@
 :navtitle: Pathogenesis and composition
 :description: Evolutionary and compositional lenses over a codebase — teaching walks and aspect graphs that sit on GUID identity, not path-shaped git archaeology.
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 After many human and AI iterations, the *current* tree often no longer teaches what the system *is*.
 Git history is a weak substitute: squash, rewrite, and one-shot generation erase the naive entrypoint that would have made the lessons visible.
@@ -122,5 +141,5 @@ Those sit on the longer connectome-fs roadmap (publish associations, mounts, int
 * xref:navigating-by-content.adoc[Labels versus wires]
 * xref:editions.adoc[Editions]
 * xref:vcs-collapse.adoc[VCS collapse over editions]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-semantic-boundaries/[Dev-Centr: Git's file-shaped change model]
 * link:https://github.com/dlang-supplemental/tgc[dlang-supplemental/tgc]

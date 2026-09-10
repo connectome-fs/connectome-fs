@@ -1,5 +1,24 @@
 = Compatibility projection
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 The connectome is a graph. Many tools and habits still expect a
 *hierarchical address space*—paths with `/` or `\`, a current directory,
@@ -67,5 +86,5 @@ That pain is exactly why connectome refuses `appname/version/file` trees as the 
 * xref:editions.adoc[Editions]
 * xref:model.adoc[Connectome model]
 * xref:shell-query-surface.adoc[Shell query surface]
-* link:https://docs.opensh.org/shell-architecture/hierarchical-projection.html[OpenShellOrg: Hierarchical projection]
-* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
+* link:https://docs.opensh.org/shell-architecture/persistent-shell-context.html[OpenShellOrg: Persistent shell context]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/file-manager-actions.html[HCI Nerdz: File manager actions]

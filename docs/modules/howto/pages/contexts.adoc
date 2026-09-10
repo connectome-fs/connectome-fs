@@ -1,4 +1,23 @@
 = How to filter by context
+:page-audience: Developers performing a specific connectome-fs task
+:page-usage-context: How-to on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 Pass context dimensions when listing so hierarchy views match the context bar
 model (Actor | Role | Category | …).

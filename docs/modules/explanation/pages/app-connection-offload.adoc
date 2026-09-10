@@ -1,5 +1,24 @@
 = App connection offload
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 Applications that work with user media and projects repeatedly reinvent
 the same graph: which assets belong to which project, which file was
@@ -49,6 +68,5 @@ When the OS and filesystem genericize connection modeling:
 * xref:model.adoc[Connectome model]
 * xref:editions.adoc[Editions]
 * xref:howto:contexts.adoc[Contexts]
-* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
-* link:https://hci-nerdz.github.io/blog/offloading-connection-modeling/[HCI Nerdz blog: Offloading connection modeling]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/file-manager-actions.html[HCI Nerdz: File manager actions]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-concurrency-enshittification/[Dev-Centr: Git concurrency enshittification]

@@ -1,4 +1,23 @@
 = Tutorial: vendor download names
+:page-audience: Developers trying connectome-fs for the first time
+:page-usage-context: Tutorial on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 Problem: vendors re-upload `pcss.zip`; the browser saves `pcss (1).zip`. Other
 vendors version the filename, but old copies still clutter the folder.

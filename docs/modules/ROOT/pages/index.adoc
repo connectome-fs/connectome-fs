@@ -1,8 +1,29 @@
 = connectome-fs documentation
 :description: GUID-addressed connectome filesystem — hierarchy as view, graph as truth.
+:page-audience: Readers starting with connectome-fs documentation
+:page-usage-context: Component start page on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
 
-Welcome. This Antora site is the docs surface for connectome-fs.
-The marketing / news site (SolidStart) links here under `/docs/`.
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
+
+Welcome. This Antora component is the product documentation for connectome-fs.
+It is published on the organization docs hub at
+https://connectome-fs.github.io/docs/connectome-fs/[connectome-fs.github.io/docs/connectome-fs/].
+The marketing site links here from https://connectome-fs.github.io/[connectome-fs.github.io].
 
 == Start here
 

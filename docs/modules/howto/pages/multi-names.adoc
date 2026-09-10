@@ -1,4 +1,23 @@
 = How to use multi-names
+:page-audience: Developers performing a specific connectome-fs task
+:page-usage-context: How-to on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 Attach several name tokens to one GUID so listing and search can use different
 comparators without renaming the underlying object.

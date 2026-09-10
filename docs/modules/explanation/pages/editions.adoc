@@ -1,5 +1,24 @@
 = Editions (folder and file forks)
 :toc:
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 An *edition* is an alternate binding of a directory or file that shares
 storage with its siblings through copy-on-write extents. Editions are
@@ -89,7 +108,7 @@ context selects *which binding* a path resolves to.
 * xref:semantic-change-units.adoc[Semantic change units]
 * xref:compatibility-projection.adoc[Compatibility projection]
 * xref:app-connection-offload.adoc[App connection offload]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-concurrency-enshittification.html[Dev-Centr: Git concurrency enshittification]
-* link:https://docs.devcentr.org/general-knowledge/latest/explanation/infrastructure/git-semantic-boundaries.html[Dev-Centr: Git's file-shaped change model]
-* link:https://hci-nerdz.github.io/docs/hci-nerdz/connectome-editions-ux.html[HCI Nerdz: Connectome editions UX]
-* link:https://docs.opensh.org/shell-architecture/graph-navigation.html[OpenShellOrg: Graph navigation]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-concurrency-enshittification/[Dev-Centr: Git concurrency enshittification]
+* link:https://docs.devcentr.org/general-knowledge/explanation/infrastructure/git-semantic-boundaries/[Dev-Centr: Git's file-shaped change model]
+* link:https://hci-nerdz.github.io/docs/hci-nerdz/file-manager-actions.html[HCI Nerdz: File manager actions]
+* link:https://docs.opensh.org/shell-architecture/session-association.html[OpenShellOrg: Session association]

@@ -1,4 +1,24 @@
 = 2026-08-04 — Editions and projection
+:page-audience: Maintainers and readers tracking functional history of connectome-fs
+:page-usage-context: Changelog detail under the Antora component; subordinate to the changelog index
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
+
 
 Expanded the Antora explanation set with canonical vocabulary for the
 git-concurrency → connectome-fs thesis:

@@ -1,6 +1,25 @@
 = Intra-file resource forks
 :description: Standardized routing inside a single file — data fork vs schema fork without loading the whole blob.
 :navtitle: Intra-file forks
+:page-audience: Readers who want the connectome-fs model and why
+:page-usage-context: Explanation article on the docs hub
+:page-orig-author: Ryan Johnson
+:page-last-author: Cursor agent on behalf of Ryan Johnson
+:page-last-edited: 2026-09-09
+
+ifndef::page-context-active[]
+[.page-context.page-context-lead]
+****
+Audience:: {page-audience}
+****
+
+[.page-context.page-context-footer]
+****
+Original author:: {page-orig-author}
+Latest contributor:: {page-last-author}
+Last updated:: {page-last-edited}
+****
+endif::[]
 
 Connectome-fs treats **identity as graph** and **paths as labels**. Intra-file forks extend that idea downward: a file is not only a blob on disk, but a **small addressable interior** with typed streams — without forcing every reader to load the entire byte span into memory.
 
