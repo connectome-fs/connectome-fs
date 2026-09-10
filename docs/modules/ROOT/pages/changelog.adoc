@@ -19,6 +19,13 @@ Last updated:: {page-last-edited}
 ****
 endif::[]
 
+== 2026-09-10 — Component home metadata chrome
+
+Details: xref:changelog-details/2026-09-10 - component home metadata chrome.adoc[2026-09-10 - component home metadata chrome]
+
+* Component start page keeps audience/usage attrs but does not show that chrome; authorship stays at the end
+* Aligns with `@antora-supplemental/page-context` 0.5 component-home surface
+
 == 2026-09-09 — Docs hub redress
 
 Details: xref:changelog-details/2026-09-09 - docs hub redress.adoc[2026-09-09 - docs hub redress]

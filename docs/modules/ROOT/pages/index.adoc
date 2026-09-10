@@ -2,16 +2,12 @@
 :description: GUID-addressed connectome filesystem — hierarchy as view, graph as truth.
 :page-audience: Readers starting with connectome-fs documentation
 :page-usage-context: Component start page on the docs hub
+:page-context-surface: component-home
 :page-orig-author: Ryan Johnson
 :page-last-author: Cursor agent on behalf of Ryan Johnson
-:page-last-edited: 2026-09-09
+:page-last-edited: 2026-09-10
 
 ifndef::page-context-active[]
-[.page-context.page-context-lead]
-****
-Audience:: {page-audience}
-****
-
 [.page-context.page-context-footer]
 ****
 Original author:: {page-orig-author}
