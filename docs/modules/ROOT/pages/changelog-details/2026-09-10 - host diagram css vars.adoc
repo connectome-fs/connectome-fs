@@ -23,6 +23,6 @@ Labels-versus-wires and identity-lenses host SVGs kept light Mermaid node fills
 after the Themed SVG runtime could apply connectome host CSS namespaces. Inline
 `style="fill:#… !important"` beat those variables.
 
-Both diagrams were regenerated with `@dev-centr/themed-svg` 0.2.2 (local pin)
+Both diagrams were regenerated with `@dev-centr/themed-svg` 0.2.3
 so stylesheet bindings rewrite those paints to `var(--themed-svg-connectome-…)`
 with fallbacks. Dark mode can recolor nodes once the runtime upgrades the image.
