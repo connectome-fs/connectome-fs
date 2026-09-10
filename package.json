@@ -14,10 +14,5 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@9.15.4",
-  "pnpm": {
-    "overrides": {
-      "@dev-centr/themed-svg": "file:../../dev-centr/themed-svg"
-    }
-  }
+  "packageManager": "pnpm@9.15.4"
 }
