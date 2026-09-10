@@ -7,8 +7,8 @@
     "diagrams:check": "node scripts/generate-themed-diagrams.mjs --check"
   },
   "devDependencies": {
-    "@dev-centr/mermaid-svg-css-vars": "0.1.2",
-    "@dev-centr/themed-svg": "file:../../dev-centr/themed-svg",
+    "@dev-centr/mermaid-svg-css-vars": "0.1.3",
+    "@dev-centr/themed-svg": "^0.2.3",
     "@mermaid-js/mermaid-cli": "^11.17.0"
   },
   "engines": {
