@@ -38,3 +38,5 @@ docs/gdrive-odt/**/*.tmp
 **/.DS_Store
 **/Thumbs.db
 **/*.raw.svg
+!/.editorconfig
+!/.gitattributes
